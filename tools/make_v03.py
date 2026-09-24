@@ -85,15 +85,34 @@ def split_volume(text: str, vol: str, toc: list[dict]) -> dict[str, str]:
     return out
 
 
-def front_units(front: str) -> dict[str, str]:
-    """Split front matter into named units so shared blocks can be identified."""
+def front_units(front: str, vol: str) -> dict[str, str]:
+    """Split front matter into named units so shared blocks can be identified.
+
+    Two traps this guards against:
+    * the printed TOC sits *inside* the front matter and would otherwise be
+      swallowed by whichever unit precedes it (it has no dot leaders once the
+      extraction loses them, so it cannot be filtered by pattern alone);
+    * the 答題策略 unit is titled per volume ("L21答題策略" / "L22答題策略" ...).
+    """
     units: dict[str, str] = {}
     lines = front.split("\n")
-    # drop the printed TOC block (dot-leader lines and their section headings)
-    keep = [l for l in lines if not re.search(r"(\s\.\s){3,}", l)]
-    front = "\n".join(keep)
+
+    # Cut the printed TOC off: it starts at the "目次"/first dot-leader line and
+    # runs to the "Part I" marker that opens the body.
+    body_at = next((i for i, l in enumerate(lines) if l.strip().startswith("Part ")), None)
+    if body_at is not None:
+        lines = lines[:body_at]
+    toc_at = next((i for i, l in enumerate(lines) if re.search(r"(\s\.\s){3,}", l)), None)
+    if toc_at is not None:
+        # walk back over the "目次" heading directly above the first leader line
+        start = toc_at
+        while start > 0 and lines[start - 1].strip() in ("目次", "目錄", "Contents"):
+            start -= 1
+        lines = lines[:start]
+
+    front = "\n".join(lines)
     names = ["免責與使用聲明", "導讀", "授證路線導航", "考試規則速覽",
-             "考綱地圖", "我國 AI法制時間軸", "L21答題策略"]
+             "考綱地圖", "我國 AI法制時間軸", f"{vol}答題策略"]
     idxs = []
     for n in names:
         m = re.search(rf"^{re.escape(n)}", front, re.M)
@@ -240,7 +259,7 @@ def main() -> int:
                          "lines": content.count("\n") + 1})
 
     if not args.review_only:
-        for name, content in front_units(chunks.get("front", "")).items():
+        for name, content in front_units(chunks.get("front", ""), vol).items():
             safe = re.sub(r"[^\w\u4e00-\u9fff]+", "_", name).strip("_")
             emit(f"front/{safe}.md", content, overwrite=args.force)
         for key, content in chunks.items():
