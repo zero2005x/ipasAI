@@ -120,6 +120,31 @@ def checker_findings(vol: str) -> list[dict]:
         return []
 
 
+def recount_stats(vol: str) -> dict:
+    """Recompute reader-visible counts from the v0.3 deliverable itself.
+
+    stats.json is generated from the v0.2.0 skeleton, but v0.3 adds content
+    (new 小節, new 補丁, new 模擬題). Numbers printed in the book must reflect
+    what actually ships, so the review step recounts from book/<VOL>/v0.3/.
+    """
+    vdir = ROOT / "book" / vol / "v0.3"
+    txt = "\n".join(p.read_text(encoding="utf-8")
+                    for p in sorted(vdir.glob("ch*.md")) + sorted(vdir.glob("apx*.md")))
+    sims_by_ch, by_code = {}, {}
+    for f in sorted(vdir.glob("ch*.md")):
+        t = f.read_text(encoding="utf-8")
+        ids = sorted(set(re.findall(r"模擬題\s+(SIM-L\d{5}-\d{3})", t)))
+        sims_by_ch[f.stem] = len(ids)
+        for i in ids:
+            code = i.split("-")[1]
+            by_code[code] = by_code.get(code, 0) + 1
+    sections = len(re.findall(r"^### \d+\.\d+ ", txt, re.M))
+    subsections = len(re.findall(r"^#{3,4} \d+\.\d+\.\d+", txt, re.M))
+    return {"sim_total": sum(sims_by_ch.values()), "sim_by_chapter": sims_by_ch,
+            "sim_by_code": dict(sorted(by_code.items())),
+            "sections": sections, "subsections": subsections}
+
+
 def build_review(vol: str, toc: list[dict], stats: dict, chunks: dict[str, str],
                  findings: list[dict]) -> str:
     by_page: dict[str, list[dict]] = {}
@@ -195,6 +220,8 @@ def main() -> int:
     vol = args.volume
 
     text, toc, stats = load(vol)
+    # numbers printed in the book come from the deliverable, not the skeleton
+    stats = {**stats, **recount_stats(vol)}
     outdir = ROOT / "book" / vol / "v0.3"
     (outdir / "front").mkdir(parents=True, exist_ok=True)
 
