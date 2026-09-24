@@ -1,6 +1,8 @@
 {
   "volume": "L21",
-  "sim_total": 44,
+  "sim_total": 46,
+  "sim_total_regex": 44,
+  "sim_orphans": [],
   "sim_by_code": {
     "L21101": 5,
     "L21102": 5,
@@ -10,7 +12,18 @@
     "L21202": 4,
     "L21203": 6,
     "L21301": 4,
-    "L21302": 5
+    "L21302": 7
+  },
+  "sim_by_chapter": {
+    "ch01": 5,
+    "ch02": 5,
+    "ch03": 6,
+    "ch04": 4,
+    "ch05": 5,
+    "ch06": 4,
+    "ch07": 6,
+    "ch08": 4,
+    "ch09": 7
   },
   "program_sim_total": 0,
   "chapters": 9,

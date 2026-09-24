@@ -187,6 +187,10 @@ def build_review(vol: str, toc: list[dict], stats: dict, chunks: dict[str, str],
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("volume")
+    ap.add_argument("--force", action="store_true",
+                    help="覆寫已存在的章節檔（會蓋掉你的編輯！）")
+    ap.add_argument("--review-only", action="store_true",
+                    help="只重生 REVIEW.md 與 MANIFEST.json，不動章節檔")
     args = ap.parse_args()
     vol = args.volume
 
@@ -196,22 +200,29 @@ def main() -> int:
 
     chunks = split_volume(text, vol, toc)
     manifest = []
+    skipped = []
 
-    def emit(rel: str, content: str):
+    def emit(rel: str, content: str, overwrite: bool = True):
         p = outdir / rel
         p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_text(content, encoding="utf-8")
+        if p.exists() and not overwrite:
+            skipped.append(rel)
+        else:
+            p.write_text(content, encoding="utf-8")
         manifest.append({"file": rel, "bytes": len(content.encode("utf-8")),
                          "lines": content.count("\n") + 1})
 
-    for name, content in front_units(chunks.get("front", "")).items():
-        safe = re.sub(r"[^\w\u4e00-\u9fff]+", "_", name).strip("_")
-        emit(f"front/{safe}.md", content)
-    for key, content in chunks.items():
-        if key == "front":
-            continue
-        emit(f"{key}.md", content)
+    if not args.review_only:
+        for name, content in front_units(chunks.get("front", "")).items():
+            safe = re.sub(r"[^\w\u4e00-\u9fff]+", "_", name).strip("_")
+            emit(f"front/{safe}.md", content, overwrite=args.force)
+        for key, content in chunks.items():
+            if key == "front":
+                continue
+            emit(f"{key}.md", content, overwrite=args.force)
 
+    # Always re-run the checker here: findings must reflect the files as they are
+    # on disk right now, not the state before other tools edited them.
     findings = checker_findings(vol)
     emit("REVIEW.md", build_review(vol, toc, stats, chunks, findings))
 
@@ -219,6 +230,10 @@ def main() -> int:
         json.dumps({"volume": vol, "files": manifest}, ensure_ascii=False, indent=2), encoding="utf-8")
 
     print(f"{vol} → book/{vol}/v0.3/")
+    if skipped:
+        print(f"  ⚠ 保留既有編輯、未覆寫 {len(skipped)} 個檔案：{', '.join(skipped[:6])}"
+              f"{' …' if len(skipped) > 6 else ''}")
+        print("    （首次產生或要重新產生時加 --force）")
     for m in manifest:
         print(f"  {m['file']:<28} {m['lines']:>5} lines")
     errs = sum(1 for f in findings if f["severity"] == "error")

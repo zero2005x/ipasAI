@@ -159,18 +159,38 @@ def render(vol: str, lines: list[tuple[str, int, bool]], toc: list[dict]) -> str
 
 
 def compute_stats(lines, toc: list[dict], vol: str) -> dict:
+    """All reader-visible counts, computed from the *chapter* sims.
+
+    Counting from chapter sims (not from a regex over the whole text) is what the
+    spec asks for: the number printed on a chapter card must equal the number of
+    simulated questions actually in that chapter.
+    """
     text = "\n".join(s for s, _, _ in lines)
-    sims = re.findall(r"模擬題\s+(SIM-L\d{5}-\d{3})", text)
     by_code: dict[str, int] = {}
-    for sid in sims:
-        code = sid.split("-")[1]
-        by_code[code] = by_code.get(code, 0) + 1
-    prog = len(re.findall(r"｜\s*程式", text))
+    by_chapter: dict[str, int] = {}
+    total = 0
+    for ch in toc:
+        sims = ch.get("sims", [])
+        if not sims:
+            continue
+        key = f"ch{ch['num']:02d}" if ch["kind"] == "chapter" else f"apx{ch['label']}"
+        by_chapter[key] = len(sims)
+        for s in sims:
+            code = s["id"].split("-")[1]
+            by_code[code] = by_code.get(code, 0) + 1
+        total += len(sims)
+    # sims that fell outside any detected chapter (should not happen)
+    all_ids = set(re.findall(r"模擬題\s+(SIM-L\d{5}-\d{3})", text))
+    counted = {s["id"] for ch in toc for s in ch.get("sims", [])}
+    orphan = sorted(all_ids - counted)
     return {
         "volume": vol,
-        "sim_total": len(sims),
+        "sim_total": total,
+        "sim_total_regex": len(all_ids),
+        "sim_orphans": orphan,
         "sim_by_code": dict(sorted(by_code.items())),
-        "program_sim_total": prog,
+        "sim_by_chapter": dict(sorted(by_chapter.items())),
+        "program_sim_total": len(re.findall(r"｜\s*程式", text)),
         "chapters": len([c for c in toc if c["kind"] == "chapter"]),
         "appendices": len([c for c in toc if c["kind"] == "appendix"]),
         "sections": sum(len(c["sections"]) for c in toc),

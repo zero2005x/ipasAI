@@ -85,11 +85,30 @@ INDEX_NEXT = re.compile(r"^###\s*\d+\.\d+\s", re.M)
 PATCH_MIN_LINES = 5
 
 
-def book_text(vol: str) -> str:
-    p = ROOT / "book" / vol / "skeleton.md"
-    if not p.exists():
-        raise SystemExit(f"missing {p}; run tools/build_skeleton.py {vol} first")
-    return p.read_text(encoding="utf-8")
+def book_text(vol: str, source: str = "v03") -> str:
+    """Read the text to check.
+
+    source="v03"      the actual deliverable: book/<VOL>/v0.3/ (default)
+    source="skeleton" the raw v0.2.0 reconstruction (baseline / migration diff)
+
+    Checking the skeleton by mistake would validate text nobody ships, and would
+    hide every fix made in v0.3. The default is therefore the deliverable.
+    """
+    d = ROOT / "book" / vol
+    if source == "skeleton":
+        p = d / "skeleton.md"
+        if not p.exists():
+            raise SystemExit(f"missing {p}; run tools/build_skeleton.py {vol} first")
+        return p.read_text(encoding="utf-8")
+
+    vdir = d / "v0.3"
+    if not vdir.exists():
+        raise SystemExit(f"missing {vdir}; run tools/make_v03.py {vol} --force first")
+    parts = [p.read_text(encoding="utf-8")
+             for p in sorted((vdir / "front").glob("*.md"))] if (vdir / "front").exists() else []
+    parts += [p.read_text(encoding="utf-8") for p in sorted(vdir.glob("ch*.md"))]
+    parts += [p.read_text(encoding="utf-8") for p in sorted(vdir.glob("apx*.md"))]
+    return "\n".join(parts)
 
 
 def line_of(text: str, pos: int) -> int:
@@ -240,12 +259,13 @@ def check_source_pages(text: str) -> list[dict]:
 SEV_ORDER = {"error": 0, "warn": 1, "info": 2}
 
 
-def report(findings: list[dict], vol: str) -> int:
+def report(findings: list[dict], vol: str, source: str = "v03") -> int:
     findings.sort(key=lambda f: (SEV_ORDER.get(f["severity"], 9), f["check"], f["line"]))
     counts: dict[str, int] = {}
     for f in findings:
         counts[f["severity"]] = counts.get(f["severity"], 0) + 1
-    print(f"\n=== {vol} 自動檢查 ===")
+    label = "v0.3 交付檔" if source == "v03" else "v0.2.0 原文基準"
+    print(f"\n=== {vol} 自動檢查（{label}）===")
     by_check: dict[str, list[dict]] = {}
     for f in findings:
         by_check.setdefault(f["check"], []).append(f)
@@ -272,10 +292,12 @@ def main() -> int:
     ap.add_argument("volume")
     ap.add_argument("--strict", action="store_true", help="warn 也視為失敗")
     ap.add_argument("--json", help="write findings to a JSON file")
+    ap.add_argument("--source", choices=("v03", "skeleton"), default="v03",
+                    help="v03（預設，交付檔）或 skeleton（v0.2.0 原文基準）")
     args = ap.parse_args()
 
     errata, lang = load_rules()
-    text = book_text(args.volume)
+    text = book_text(args.volume, args.source)
     findings: list[dict] = []
     findings += check_terminology(text, errata)
     findings += check_language(text, lang)
@@ -284,7 +306,7 @@ def main() -> int:
     findings += check_index_rows(text)
     findings += check_source_pages(text)
 
-    n_err = report(findings, args.volume)
+    n_err = report(findings, args.volume, args.source)
     if args.json:
         Path(args.json).write_text(json.dumps(findings, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"findings → {args.json}")
