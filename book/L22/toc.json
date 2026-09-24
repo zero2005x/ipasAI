@@ -1,0 +1,1590 @@
+[
+  {
+    "kind": "chapter",
+    "num": 1,
+    "title": "敘述性統計與資料摘要技術",
+    "pdf_page": 15,
+    "line": 344,
+    "sections": [
+      {
+        "num": "1.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 15,
+        "line": 372
+      },
+      {
+        "num": "1.1",
+        "title": ".1集中趨勢：三個統計量的選用",
+        "pdf_page": 16,
+        "line": 373
+      },
+      {
+        "num": "1.1",
+        "title": ".2離散程度",
+        "pdf_page": 16,
+        "line": 386
+      },
+      {
+        "num": "1.1",
+        "title": ".3箱型圖與離群值判定",
+        "pdf_page": 16,
+        "line": 397
+      },
+      {
+        "num": "1.1",
+        "title": ".4相關係數",
+        "pdf_page": 16,
+        "line": 404
+      },
+      {
+        "num": "1.2",
+        "title": "程式判讀重點",
+        "pdf_page": 17,
+        "line": 411
+      },
+      {
+        "num": "1.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 17,
+        "line": 422
+      },
+      {
+        "num": "1.4",
+        "title": "正式公告試題索引",
+        "pdf_page": 17,
+        "line": 431
+      },
+      {
+        "num": "1.5",
+        "title": "自編模擬題",
+        "pdf_page": 18,
+        "line": 450
+      },
+      {
+        "num": "1.6",
+        "title": "章末複習",
+        "pdf_page": 20,
+        "line": 522
+      },
+      {
+        "num": "1.6",
+        "title": ".1一頁重點",
+        "pdf_page": 20,
+        "line": 523
+      },
+      {
+        "num": "1.6",
+        "title": ".2必背名詞",
+        "pdf_page": 20,
+        "line": 533
+      },
+      {
+        "num": "1.6",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 21,
+        "line": 536
+      },
+      {
+        "num": "1.6",
+        "title": ".4跨章連結",
+        "pdf_page": 21,
+        "line": 542
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L22101-001",
+        "pdf_page": 18,
+        "line": 451
+      },
+      {
+        "id": "SIM-L22101-002",
+        "pdf_page": 19,
+        "line": 469
+      },
+      {
+        "id": "SIM-L22101-003",
+        "pdf_page": 19,
+        "line": 485
+      },
+      {
+        "id": "SIM-L22101-004",
+        "pdf_page": 20,
+        "line": 504
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 2,
+    "title": "機率分佈與資料分佈模型",
+    "pdf_page": 22,
+    "line": 548,
+    "sections": [
+      {
+        "num": "2.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 22,
+        "line": 574
+      },
+      {
+        "num": "2.1",
+        "title": ".1六種常見分佈的辨識",
+        "pdf_page": 22,
+        "line": 575
+      },
+      {
+        "num": "2.1",
+        "title": ".2常態分佈與 Z分數",
+        "pdf_page": 23,
+        "line": 592
+      },
+      {
+        "num": "2.1",
+        "title": ".3中央極限定理",
+        "pdf_page": 23,
+        "line": 598
+      },
+      {
+        "num": "2.2",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 24,
+        "line": 606
+      },
+      {
+        "num": "2.3",
+        "title": "正式公告試題索引",
+        "pdf_page": 24,
+        "line": 613
+      },
+      {
+        "num": "2.4",
+        "title": "自編模擬題",
+        "pdf_page": 24,
+        "line": 628
+      },
+      {
+        "num": "2.5",
+        "title": "章末複習",
+        "pdf_page": 26,
+        "line": 682
+      },
+      {
+        "num": "2.5",
+        "title": ".1一頁重點",
+        "pdf_page": 26,
+        "line": 683
+      },
+      {
+        "num": "2.5",
+        "title": ".2必背名詞",
+        "pdf_page": 26,
+        "line": 689
+      },
+      {
+        "num": "2.5",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 26,
+        "line": 692
+      },
+      {
+        "num": "2.5",
+        "title": ".4跨章連結",
+        "pdf_page": 26,
+        "line": 697
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L22102-001",
+        "pdf_page": 24,
+        "line": 629
+      },
+      {
+        "id": "SIM-L22102-002",
+        "pdf_page": 25,
+        "line": 645
+      },
+      {
+        "id": "SIM-L22102-003",
+        "pdf_page": 25,
+        "line": 663
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 3,
+    "title": "假設檢定與統計推論",
+    "pdf_page": 27,
+    "line": 703,
+    "sections": [
+      {
+        "num": "3.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 27,
+        "line": 732
+      },
+      {
+        "num": "3.1",
+        "title": ".1檢定五步驟",
+        "pdf_page": 28,
+        "line": 733
+      },
+      {
+        "num": "3.1",
+        "title": ".2兩類錯誤與檢定力",
+        "pdf_page": 28,
+        "line": 747
+      },
+      {
+        "num": "3.1",
+        "title": ".3單尾與雙尾",
+        "pdf_page": 28,
+        "line": 760
+      },
+      {
+        "num": "3.1",
+        "title": ".4常見檢定的選用",
+        "pdf_page": 28,
+        "line": 764
+      },
+      {
+        "num": "3.2",
+        "title": "程式判讀重點",
+        "pdf_page": 29,
+        "line": 773
+      },
+      {
+        "num": "3.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 29,
+        "line": 783
+      },
+      {
+        "num": "3.4",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 30,
+        "line": 795
+      },
+      {
+        "num": "3.5",
+        "title": "正式公告試題索引",
+        "pdf_page": 30,
+        "line": 808
+      },
+      {
+        "num": "3.6",
+        "title": "自編模擬題",
+        "pdf_page": 31,
+        "line": 827
+      },
+      {
+        "num": "3.7",
+        "title": "章末複習",
+        "pdf_page": 33,
+        "line": 903
+      },
+      {
+        "num": "3.7",
+        "title": ".1一頁重點",
+        "pdf_page": 33,
+        "line": 904
+      },
+      {
+        "num": "3.7",
+        "title": ".2必背名詞",
+        "pdf_page": 33,
+        "line": 914
+      },
+      {
+        "num": "3.7",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 33,
+        "line": 917
+      },
+      {
+        "num": "3.7",
+        "title": ".4跨章連結",
+        "pdf_page": 33,
+        "line": 923
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L22103-001",
+        "pdf_page": 31,
+        "line": 828
+      },
+      {
+        "id": "SIM-L22103-002",
+        "pdf_page": 31,
+        "line": 846
+      },
+      {
+        "id": "SIM-L22103-003",
+        "pdf_page": 32,
+        "line": 863
+      },
+      {
+        "id": "SIM-L22103-004",
+        "pdf_page": 32,
+        "line": 884
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 4,
+    "title": "數據收集與清理",
+    "pdf_page": 35,
+    "line": 934,
+    "sections": [
+      {
+        "num": "4.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 35,
+        "line": 960
+      },
+      {
+        "num": "4.1",
+        "title": ".1 資料品質六構面",
+        "pdf_page": 35,
+        "line": 961
+      },
+      {
+        "num": "4.1",
+        "title": ".2三種缺失機制",
+        "pdf_page": 36,
+        "line": 971
+      },
+      {
+        "num": "4.1",
+        "title": ".3ETL與 ELT",
+        "pdf_page": 36,
+        "line": 986
+      },
+      {
+        "num": "4.2",
+        "title": "程式判讀重點",
+        "pdf_page": 37,
+        "line": 994
+      },
+      {
+        "num": "4.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 37,
+        "line": 1006
+      },
+      {
+        "num": "4.4",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 37,
+        "line": 1014
+      },
+      {
+        "num": "4.5",
+        "title": "正式公告試題索引",
+        "pdf_page": 38,
+        "line": 1028
+      },
+      {
+        "num": "4.6",
+        "title": "自編模擬題",
+        "pdf_page": 38,
+        "line": 1050
+      },
+      {
+        "num": "4.7",
+        "title": "章末複習",
+        "pdf_page": 40,
+        "line": 1126
+      },
+      {
+        "num": "4.7",
+        "title": ".1一頁重點",
+        "pdf_page": 40,
+        "line": 1127
+      },
+      {
+        "num": "4.7",
+        "title": ".2必背名詞",
+        "pdf_page": 41,
+        "line": 1137
+      },
+      {
+        "num": "4.7",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 41,
+        "line": 1140
+      },
+      {
+        "num": "4.7",
+        "title": ".4跨章連結",
+        "pdf_page": 41,
+        "line": 1145
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L22201-001",
+        "pdf_page": 38,
+        "line": 1051
+      },
+      {
+        "id": "SIM-L22201-002",
+        "pdf_page": 39,
+        "line": 1070
+      },
+      {
+        "id": "SIM-L22201-003",
+        "pdf_page": 39,
+        "line": 1090
+      },
+      {
+        "id": "SIM-L22201-004",
+        "pdf_page": 40,
+        "line": 1110
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 5,
+    "title": "數據儲存與管理",
+    "pdf_page": 42,
+    "line": 1153,
+    "sections": [
+      {
+        "num": "5.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 42,
+        "line": 1180
+      },
+      {
+        "num": "5.1",
+        "title": ".1 三種儲存架構",
+        "pdf_page": 42,
+        "line": 1181
+      },
+      {
+        "num": "5.1",
+        "title": ".2OLTP與 OLAP",
+        "pdf_page": 43,
+        "line": 1193
+      },
+      {
+        "num": "5.1",
+        "title": ".3NoSQL四型與 CAP",
+        "pdf_page": 43,
+        "line": 1205
+      },
+      {
+        "num": "5.2",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 44,
+        "line": 1216
+      },
+      {
+        "num": "5.3",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 44,
+        "line": 1225
+      },
+      {
+        "num": "5.4",
+        "title": "正式公告試題索引",
+        "pdf_page": 44,
+        "line": 1240
+      },
+      {
+        "num": "5.5",
+        "title": "自編模擬題",
+        "pdf_page": 45,
+        "line": 1259
+      },
+      {
+        "num": "5.6",
+        "title": "章末複習",
+        "pdf_page": 47,
+        "line": 1330
+      },
+      {
+        "num": "5.6",
+        "title": ".1一頁重點",
+        "pdf_page": 47,
+        "line": 1331
+      },
+      {
+        "num": "5.6",
+        "title": ".2必背名詞",
+        "pdf_page": 47,
+        "line": 1339
+      },
+      {
+        "num": "5.6",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 47,
+        "line": 1342
+      },
+      {
+        "num": "5.6",
+        "title": ".4跨章連結",
+        "pdf_page": 48,
+        "line": 1347
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L22202-001",
+        "pdf_page": 45,
+        "line": 1260
+      },
+      {
+        "id": "SIM-L22202-002",
+        "pdf_page": 46,
+        "line": 1279
+      },
+      {
+        "id": "SIM-L22202-003",
+        "pdf_page": 46,
+        "line": 1295
+      },
+      {
+        "id": "SIM-L22202-004",
+        "pdf_page": 46,
+        "line": 1311
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 6,
+    "title": "數據處理技術與工具",
+    "pdf_page": 49,
+    "line": 1357,
+    "sections": [
+      {
+        "num": "6.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 50,
+        "line": 1390
+      },
+      {
+        "num": "6.1",
+        "title": ".1批次與串流",
+        "pdf_page": 50,
+        "line": 1391
+      },
+      {
+        "num": "6.1",
+        "title": ".2Hadoop與 Spark的關鍵差異",
+        "pdf_page": 50,
+        "line": 1405
+      },
+      {
+        "num": "6.1",
+        "title": ".3Spark的三個必考特性",
+        "pdf_page": 51,
+        "line": 1421
+      },
+      {
+        "num": "6.1",
+        "title": ".3.1一、惰性求值與 DAG",
+        "pdf_page": 51,
+        "line": 1423
+      },
+      {
+        "num": "6.1",
+        "title": ".3.3三、Shuffle與資料傾斜",
+        "pdf_page": 51,
+        "line": 1441
+      },
+      {
+        "num": "6.1",
+        "title": ".4Kafka與事件串流",
+        "pdf_page": 52,
+        "line": 1454
+      },
+      {
+        "num": "6.1",
+        "title": ".5時間語意與視窗",
+        "pdf_page": 52,
+        "line": 1465
+      },
+      {
+        "num": "6.2",
+        "title": "程式判讀重點",
+        "pdf_page": 53,
+        "line": 1481
+      },
+      {
+        "num": "6.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 53,
+        "line": 1497
+      },
+      {
+        "num": "6.4",
+        "title": "正式公告試題索引",
+        "pdf_page": 53,
+        "line": 1507
+      },
+      {
+        "num": "6.5",
+        "title": "自編模擬題",
+        "pdf_page": 55,
+        "line": 1547
+      },
+      {
+        "num": "6.6",
+        "title": "章末複習",
+        "pdf_page": 58,
+        "line": 1682
+      },
+      {
+        "num": "6.6",
+        "title": ".1一頁重點",
+        "pdf_page": 58,
+        "line": 1683
+      },
+      {
+        "num": "6.6",
+        "title": ".2必背名詞",
+        "pdf_page": 59,
+        "line": 1696
+      },
+      {
+        "num": "6.6",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 59,
+        "line": 1700
+      },
+      {
+        "num": "6.6",
+        "title": ".4跨章連結",
+        "pdf_page": 59,
+        "line": 1706
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L22203-001",
+        "pdf_page": 55,
+        "line": 1548
+      },
+      {
+        "id": "SIM-L22203-002",
+        "pdf_page": 55,
+        "line": 1569
+      },
+      {
+        "id": "SIM-L22203-003",
+        "pdf_page": 56,
+        "line": 1589
+      },
+      {
+        "id": "SIM-L22203-004",
+        "pdf_page": 56,
+        "line": 1606
+      },
+      {
+        "id": "SIM-L22203-005",
+        "pdf_page": 57,
+        "line": 1623
+      },
+      {
+        "id": "SIM-L22203-006",
+        "pdf_page": 57,
+        "line": 1643
+      },
+      {
+        "id": "SIM-L22203-007",
+        "pdf_page": 58,
+        "line": 1663
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 7,
+    "title": "統計學在大數據中的應用",
+    "pdf_page": 61,
+    "line": 1717,
+    "sections": [
+      {
+        "num": "7.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 61,
+        "line": 1745
+      },
+      {
+        "num": "7.1",
+        "title": ".1五種轉換與縮放方法",
+        "pdf_page": 62,
+        "line": 1746
+      },
+      {
+        "num": "7.1",
+        "title": ".2主成分分析（PCA）",
+        "pdf_page": 62,
+        "line": 1768
+      },
+      {
+        "num": "7.1",
+        "title": ".3t-SNE與 UMAP的用途邊界",
+        "pdf_page": 63,
+        "line": 1782
+      },
+      {
+        "num": "7.2",
+        "title": "程式判讀重點",
+        "pdf_page": 63,
+        "line": 1790
+      },
+      {
+        "num": "7.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 63,
+        "line": 1806
+      },
+      {
+        "num": "7.4",
+        "title": "正式公告試題索引",
+        "pdf_page": 64,
+        "line": 1815
+      },
+      {
+        "num": "7.5",
+        "title": "自編模擬題",
+        "pdf_page": 64,
+        "line": 1835
+      },
+      {
+        "num": "7.6",
+        "title": "章末複習",
+        "pdf_page": 67,
+        "line": 1932
+      },
+      {
+        "num": "7.6",
+        "title": ".1一頁重點",
+        "pdf_page": 67,
+        "line": 1933
+      },
+      {
+        "num": "7.6",
+        "title": ".2必背名詞",
+        "pdf_page": 67,
+        "line": 1943
+      },
+      {
+        "num": "7.6",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 67,
+        "line": 1946
+      },
+      {
+        "num": "7.6",
+        "title": ".4跨章連結",
+        "pdf_page": 68,
+        "line": 1952
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L22301-001",
+        "pdf_page": 64,
+        "line": 1836
+      },
+      {
+        "id": "SIM-L22301-002",
+        "pdf_page": 65,
+        "line": 1856
+      },
+      {
+        "id": "SIM-L22301-003",
+        "pdf_page": 65,
+        "line": 1878
+      },
+      {
+        "id": "SIM-L22301-004",
+        "pdf_page": 66,
+        "line": 1896
+      },
+      {
+        "id": "SIM-L22301-005",
+        "pdf_page": 67,
+        "line": 1915
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 8,
+    "title": "常見的大數據分析方法",
+    "pdf_page": 69,
+    "line": 1960,
+    "sections": [
+      {
+        "num": "8.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 70,
+        "line": 1990
+      },
+      {
+        "num": "8.1",
+        "title": ".1分析的四個層次",
+        "pdf_page": 70,
+        "line": 1991
+      },
+      {
+        "num": "8.1",
+        "title": ".2三種分群演算法",
+        "pdf_page": 70,
+        "line": 1996
+      },
+      {
+        "num": "8.1",
+        "title": ".3關聯規則：三個指標",
+        "pdf_page": 70,
+        "line": 2013
+      },
+      {
+        "num": "8.1",
+        "title": ".4圖分析",
+        "pdf_page": 71,
+        "line": 2028
+      },
+      {
+        "num": "8.1",
+        "title": ".5時序分析",
+        "pdf_page": 71,
+        "line": 2037
+      },
+      {
+        "num": "8.1",
+        "title": ".6資料不平衡：四層處理策略",
+        "pdf_page": 71,
+        "line": 2044
+      },
+      {
+        "num": "8.2",
+        "title": "程式判讀重點",
+        "pdf_page": 72,
+        "line": 2066
+      },
+      {
+        "num": "8.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 73,
+        "line": 2085
+      },
+      {
+        "num": "8.4",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 73,
+        "line": 2096
+      },
+      {
+        "num": "8.5",
+        "title": "正式公告試題索引",
+        "pdf_page": 73,
+        "line": 2108
+      },
+      {
+        "num": "8.6",
+        "title": "自編模擬題",
+        "pdf_page": 74,
+        "line": 2140
+      },
+      {
+        "num": "99.6",
+        "title": "%而宣告成功。下列評論何者最為適當？",
+        "pdf_page": 76,
+        "line": 2203
+      },
+      {
+        "num": "8.7",
+        "title": "章末複習",
+        "pdf_page": 78,
+        "line": 2280
+      },
+      {
+        "num": "8.7",
+        "title": ".1一頁重點",
+        "pdf_page": 78,
+        "line": 2281
+      },
+      {
+        "num": "8.7",
+        "title": ".2必背名詞",
+        "pdf_page": 78,
+        "line": 2292
+      },
+      {
+        "num": "8.7",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 79,
+        "line": 2295
+      },
+      {
+        "num": "8.7",
+        "title": ".4跨章連結",
+        "pdf_page": 79,
+        "line": 2301
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L22302-001",
+        "pdf_page": 74,
+        "line": 2141
+      },
+      {
+        "id": "SIM-L22302-002",
+        "pdf_page": 75,
+        "line": 2162
+      },
+      {
+        "id": "SIM-L22302-003",
+        "pdf_page": 75,
+        "line": 2182
+      },
+      {
+        "id": "SIM-L22302-004",
+        "pdf_page": 76,
+        "line": 2201
+      },
+      {
+        "id": "SIM-L22302-005",
+        "pdf_page": 76,
+        "line": 2220
+      },
+      {
+        "id": "SIM-L22302-006",
+        "pdf_page": 77,
+        "line": 2243
+      },
+      {
+        "id": "SIM-L22302-007",
+        "pdf_page": 78,
+        "line": 2262
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 9,
+    "title": "數據可視化工具",
+    "pdf_page": 80,
+    "line": 2310,
+    "sections": [
+      {
+        "num": "9.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 80,
+        "line": 2337
+      },
+      {
+        "num": "9.1",
+        "title": ".1圖表選型對照",
+        "pdf_page": 80,
+        "line": 2338
+      },
+      {
+        "num": "9.1",
+        "title": ".2視覺化的誠信原則",
+        "pdf_page": 81,
+        "line": 2348
+      },
+      {
+        "num": "9.1",
+        "title": ".3大規模視覺化效能",
+        "pdf_page": 81,
+        "line": 2358
+      },
+      {
+        "num": "9.2",
+        "title": "程式判讀重點",
+        "pdf_page": 81,
+        "line": 2369
+      },
+      {
+        "num": "9.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 82,
+        "line": 2378
+      },
+      {
+        "num": "9.4",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 82,
+        "line": 2387
+      },
+      {
+        "num": "9.5",
+        "title": "正式公告試題索引",
+        "pdf_page": 83,
+        "line": 2402
+      },
+      {
+        "num": "9.6",
+        "title": "自編模擬題",
+        "pdf_page": 83,
+        "line": 2425
+      },
+      {
+        "num": "9.7",
+        "title": "章末複習",
+        "pdf_page": 85,
+        "line": 2500
+      },
+      {
+        "num": "9.7",
+        "title": ".1一頁重點",
+        "pdf_page": 85,
+        "line": 2501
+      },
+      {
+        "num": "9.7",
+        "title": ".2必背名詞",
+        "pdf_page": 86,
+        "line": 2511
+      },
+      {
+        "num": "9.7",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 86,
+        "line": 2514
+      },
+      {
+        "num": "9.7",
+        "title": ".4跨章連結",
+        "pdf_page": 86,
+        "line": 2519
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L22303-001",
+        "pdf_page": 83,
+        "line": 2426
+      },
+      {
+        "id": "SIM-L22303-002",
+        "pdf_page": 84,
+        "line": 2443
+      },
+      {
+        "id": "SIM-L22303-003",
+        "pdf_page": 84,
+        "line": 2465
+      },
+      {
+        "id": "SIM-L22303-004",
+        "pdf_page": 85,
+        "line": 2483
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 10,
+    "title": "大數據與機器學習",
+    "pdf_page": 88,
+    "line": 2530,
+    "sections": [
+      {
+        "num": "10.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 88,
+        "line": 2554
+      },
+      {
+        "num": "10.1",
+        "title": ".1 5V對機器學習的具體衝擊",
+        "pdf_page": 88,
+        "line": 2555
+      },
+      {
+        "num": "10.1",
+        "title": ".2分散式訓練的兩種切法",
+        "pdf_page": 89,
+        "line": 2572
+      },
+      {
+        "num": "10.1",
+        "title": ".3維度詛咒",
+        "pdf_page": 89,
+        "line": 2577
+      },
+      {
+        "num": "10.2",
+        "title": "程式判讀重點",
+        "pdf_page": 89,
+        "line": 2583
+      },
+      {
+        "num": "10.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 90,
+        "line": 2593
+      },
+      {
+        "num": "10.4",
+        "title": "正式公告試題索引",
+        "pdf_page": 90,
+        "line": 2600
+      },
+      {
+        "num": "10.5",
+        "title": "自編模擬題",
+        "pdf_page": 90,
+        "line": 2612
+      },
+      {
+        "num": "10.6",
+        "title": "章末複習",
+        "pdf_page": 91,
+        "line": 2649
+      },
+      {
+        "num": "10.6",
+        "title": ".1一頁重點",
+        "pdf_page": 91,
+        "line": 2650
+      },
+      {
+        "num": "10.6",
+        "title": ".2必背名詞",
+        "pdf_page": 92,
+        "line": 2658
+      },
+      {
+        "num": "10.6",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 92,
+        "line": 2660
+      },
+      {
+        "num": "10.6",
+        "title": ".4跨章連結",
+        "pdf_page": 92,
+        "line": 2664
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L22401-001",
+        "pdf_page": 90,
+        "line": 2613
+      },
+      {
+        "id": "SIM-L22401-002",
+        "pdf_page": 91,
+        "line": 2630
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 11,
+    "title": "大數據在鑑別式 AI中的應用",
+    "pdf_page": 93,
+    "line": 2671,
+    "sections": [
+      {
+        "num": "11.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 93,
+        "line": 2694
+      },
+      {
+        "num": "11.1",
+        "title": ".1鑑別式與生成式的分野",
+        "pdf_page": 93,
+        "line": 2695
+      },
+      {
+        "num": "11.1",
+        "title": ".2典型場景與共同資料需求",
+        "pdf_page": 94,
+        "line": 2701
+      },
+      {
+        "num": "11.1",
+        "title": ".3時間點正確性",
+        "pdf_page": 94,
+        "line": 2705
+      },
+      {
+        "num": "11.2",
+        "title": "程式判讀重點",
+        "pdf_page": 94,
+        "line": 2717
+      },
+      {
+        "num": "11.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 94,
+        "line": 2728
+      },
+      {
+        "num": "11.4",
+        "title": "正式公告試題索引",
+        "pdf_page": 95,
+        "line": 2735
+      },
+      {
+        "num": "11.5",
+        "title": "自編模擬題",
+        "pdf_page": 95,
+        "line": 2755
+      },
+      {
+        "num": "11.6",
+        "title": "章末複習",
+        "pdf_page": 97,
+        "line": 2808
+      },
+      {
+        "num": "11.6",
+        "title": ".1一頁重點",
+        "pdf_page": 97,
+        "line": 2809
+      },
+      {
+        "num": "11.6",
+        "title": ".2必背名詞",
+        "pdf_page": 97,
+        "line": 2816
+      },
+      {
+        "num": "11.6",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 97,
+        "line": 2819
+      },
+      {
+        "num": "11.6",
+        "title": ".4跨章連結",
+        "pdf_page": 97,
+        "line": 2823
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L22402-001",
+        "pdf_page": 95,
+        "line": 2756
+      },
+      {
+        "id": "SIM-L22402-002",
+        "pdf_page": 96,
+        "line": 2773
+      },
+      {
+        "id": "SIM-L22402-003",
+        "pdf_page": 96,
+        "line": 2793
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 12,
+    "title": "大數據在生成式 AI中的應用",
+    "pdf_page": 98,
+    "line": 2830,
+    "sections": [
+      {
+        "num": "12.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 98,
+        "line": 2857
+      },
+      {
+        "num": "12.1",
+        "title": ".1 大規模語料處理的六項技術需求",
+        "pdf_page": 98,
+        "line": 2858
+      },
+      {
+        "num": "12.1",
+        "title": ".2生成式與鑑別式的資料需求差異",
+        "pdf_page": 99,
+        "line": 2874
+      },
+      {
+        "num": "12.2",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 99,
+        "line": 2881
+      },
+      {
+        "num": "12.3",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 100,
+        "line": 2889
+      },
+      {
+        "num": "12.4",
+        "title": "正式公告試題索引",
+        "pdf_page": 100,
+        "line": 2904
+      },
+      {
+        "num": "12.5",
+        "title": "自編模擬題",
+        "pdf_page": 101,
+        "line": 2916
+      },
+      {
+        "num": "12.6",
+        "title": "章末複習",
+        "pdf_page": 102,
+        "line": 2958
+      },
+      {
+        "num": "12.6",
+        "title": ".1一頁重點",
+        "pdf_page": 102,
+        "line": 2959
+      },
+      {
+        "num": "12.6",
+        "title": ".2必背名詞",
+        "pdf_page": 102,
+        "line": 2967
+      },
+      {
+        "num": "12.6",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 102,
+        "line": 2970
+      },
+      {
+        "num": "12.6",
+        "title": ".4跨章連結",
+        "pdf_page": 102,
+        "line": 2975
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L22403-001",
+        "pdf_page": 101,
+        "line": 2917
+      },
+      {
+        "id": "SIM-L22403-002",
+        "pdf_page": 101,
+        "line": 2936
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 13,
+    "title": "大數據隱私保護、安全與合規",
+    "pdf_page": 103,
+    "line": 2984,
+    "sections": [
+      {
+        "num": "13.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 104,
+        "line": 3018
+      },
+      {
+        "num": "13.1",
+        "title": ".1七種隱私強化技術",
+        "pdf_page": 104,
+        "line": 3019
+      },
+      {
+        "num": "13.1",
+        "title": ".2差分隱私的 ε",
+        "pdf_page": 104,
+        "line": 3043
+      },
+      {
+        "num": "13.1",
+        "title": ".3聯邦學習不等於絕對安全",
+        "pdf_page": 105,
+        "line": 3051
+      },
+      {
+        "num": "13.1",
+        "title": ".4去識別化的限度",
+        "pdf_page": 105,
+        "line": 3061
+      },
+      {
+        "num": "13.2",
+        "title": "程式判讀重點",
+        "pdf_page": 105,
+        "line": 3071
+      },
+      {
+        "num": "13.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 106,
+        "line": 3082
+      },
+      {
+        "num": "13.4",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 106,
+        "line": 3091
+      },
+      {
+        "num": "13.5",
+        "title": "正式公告試題索引",
+        "pdf_page": 107,
+        "line": 3124
+      },
+      {
+        "num": "13.6",
+        "title": "自編模擬題",
+        "pdf_page": 108,
+        "line": 3140
+      },
+      {
+        "num": "13.7",
+        "title": "章末複習",
+        "pdf_page": 110,
+        "line": 3223
+      },
+      {
+        "num": "13.7",
+        "title": ".1一頁重點",
+        "pdf_page": 110,
+        "line": 3224
+      },
+      {
+        "num": "13.7",
+        "title": ".2必背名詞",
+        "pdf_page": 110,
+        "line": 3236
+      },
+      {
+        "num": "13.7",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 110,
+        "line": 3239
+      },
+      {
+        "num": "13.7",
+        "title": ".4跨章連結",
+        "pdf_page": 111,
+        "line": 3245
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L22404-001",
+        "pdf_page": 108,
+        "line": 3141
+      },
+      {
+        "id": "SIM-L22404-002",
+        "pdf_page": 108,
+        "line": 3164
+      },
+      {
+        "id": "SIM-L22404-003",
+        "pdf_page": 109,
+        "line": 3181
+      },
+      {
+        "id": "SIM-L22404-004",
+        "pdf_page": 109,
+        "line": 3203
+      }
+    ]
+  },
+  {
+    "kind": "appendix",
+    "num": 14,
+    "label": "A",
+    "title": "政府指引速查表",
+    "pdf_page": 113,
+    "line": 3258,
+    "sections": [
+      {
+        "num": "14.1",
+        "title": "文件性質與拘束力對照",
+        "pdf_page": 113,
+        "line": 3260
+      },
+      {
+        "num": "14.2",
+        "title": "必背清單",
+        "pdf_page": 114,
+        "line": 3287
+      },
+      {
+        "num": "14.3",
+        "title": "三個最容易記反的細節",
+        "pdf_page": 114,
+        "line": 3307
+      },
+      {
+        "num": "14.4",
+        "title": "寫作與作答句型",
+        "pdf_page": 114,
+        "line": 3314
+      }
+    ],
+    "sims": []
+  },
+  {
+    "kind": "appendix",
+    "num": 15,
+    "label": "D",
+    "title": "勘誤、來源登錄與本冊建置狀態",
+    "pdf_page": 116,
+    "line": 3323,
+    "sections": [
+      {
+        "num": "15.1",
+        "title": "已套用之勘誤",
+        "pdf_page": 116,
+        "line": 3324
+      },
+      {
+        "num": "15.2",
+        "title": "編號正規化紀錄",
+        "pdf_page": 116,
+        "line": 3335
+      },
+      {
+        "num": "15.3",
+        "title": "正式公告試題索引之採用與限制",
+        "pdf_page": 116,
+        "line": 3343
+      },
+      {
+        "num": "15.4",
+        "title": "L22命題密度統計",
+        "pdf_page": 117,
+        "line": 3362
+      },
+      {
+        "num": "15.5",
+        "title": "未解決之資料缺口與補件流程",
+        "pdf_page": 118,
+        "line": 3376
+      },
+      {
+        "num": "15.6",
+        "title": "本冊建置狀態",
+        "pdf_page": 118,
+        "line": 3389
+      }
+    ],
+    "sims": []
+  }
+]

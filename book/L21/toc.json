@@ -1,0 +1,1357 @@
+[
+  {
+    "kind": "chapter",
+    "num": 1,
+    "title": "自然語言處理技術與應用",
+    "pdf_page": 16,
+    "line": 313,
+    "sections": [
+      {
+        "num": "1.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 17,
+        "line": 352
+      },
+      {
+        "num": "1.1",
+        "title": ".1文本表示法：四代演進",
+        "pdf_page": 17,
+        "line": 353
+      },
+      {
+        "num": "1.1",
+        "title": ".2序列模型：三次躍遷",
+        "pdf_page": 17,
+        "line": 375
+      },
+      {
+        "num": "1.1",
+        "title": ".2.1RNN的根本缺陷",
+        "pdf_page": 18,
+        "line": 377
+      },
+      {
+        "num": "1.1",
+        "title": ".2.2LSTM與 GRU的門控補救",
+        "pdf_page": 18,
+        "line": 381
+      },
+      {
+        "num": "1.1",
+        "title": ".2.3Transformer：從序列到並行",
+        "pdf_page": 18,
+        "line": 390
+      },
+      {
+        "num": "1.1",
+        "title": ".3三大預訓練架構的任務對位",
+        "pdf_page": 18,
+        "line": 404
+      },
+      {
+        "num": "1.1",
+        "title": ".4核心任務與評估指標",
+        "pdf_page": 19,
+        "line": 419
+      },
+      {
+        "num": "1.2",
+        "title": "應用規劃與決策流程",
+        "pdf_page": 19,
+        "line": 437
+      },
+      {
+        "num": "1.2",
+        "title": ".1NLP專案的選型決策",
+        "pdf_page": 19,
+        "line": 438
+      },
+      {
+        "num": "1.2",
+        "title": ".2七項折衷檢查",
+        "pdf_page": 20,
+        "line": 451
+      },
+      {
+        "num": "1.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 20,
+        "line": 462
+      },
+      {
+        "num": "1.4",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 21,
+        "line": 476
+      },
+      {
+        "num": "1.5",
+        "title": "正式公告試題索引",
+        "pdf_page": 21,
+        "line": 497
+      },
+      {
+        "num": "1.6",
+        "title": "自編模擬題",
+        "pdf_page": 22,
+        "line": 525
+      },
+      {
+        "num": "1.7",
+        "title": "章末複習",
+        "pdf_page": 25,
+        "line": 623
+      },
+      {
+        "num": "1.7",
+        "title": ".1一頁重點",
+        "pdf_page": 25,
+        "line": 624
+      },
+      {
+        "num": "1.7",
+        "title": ".2必背名詞",
+        "pdf_page": 25,
+        "line": 636
+      },
+      {
+        "num": "1.7",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 25,
+        "line": 640
+      },
+      {
+        "num": "1.7",
+        "title": ".4跨章連結",
+        "pdf_page": 26,
+        "line": 646
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L21101-001",
+        "pdf_page": 22,
+        "line": 526
+      },
+      {
+        "id": "SIM-L21101-002",
+        "pdf_page": 23,
+        "line": 549
+      },
+      {
+        "id": "SIM-L21101-003",
+        "pdf_page": 23,
+        "line": 567
+      },
+      {
+        "id": "SIM-L21101-004",
+        "pdf_page": 24,
+        "line": 585
+      },
+      {
+        "id": "SIM-L21101-005",
+        "pdf_page": 24,
+        "line": 604
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 2,
+    "title": "電腦視覺技術與應用",
+    "pdf_page": 27,
+    "line": 659,
+    "sections": [
+      {
+        "num": "2.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 28,
+        "line": 690
+      },
+      {
+        "num": "2.1",
+        "title": ".1四大視覺任務：輸出粒度階梯",
+        "pdf_page": 28,
+        "line": 691
+      },
+      {
+        "num": "2.1",
+        "title": ".2CNN的三個結構性直覺",
+        "pdf_page": 28,
+        "line": 707
+      },
+      {
+        "num": "2.1",
+        "title": ".3IoU與 mAP",
+        "pdf_page": 28,
+        "line": 718
+      },
+      {
+        "num": "2.1",
+        "title": ".4偵測器選型",
+        "pdf_page": 29,
+        "line": 729
+      },
+      {
+        "num": "2.2",
+        "title": "應用規劃與決策流程",
+        "pdf_page": 29,
+        "line": 743
+      },
+      {
+        "num": "2.2",
+        "title": ".1工業視覺檢測管線",
+        "pdf_page": 29,
+        "line": 744
+      },
+      {
+        "num": "2.2",
+        "title": ".2閾值是商業決策，不是技術參數",
+        "pdf_page": 30,
+        "line": 754
+      },
+      {
+        "num": "2.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 30,
+        "line": 762
+      },
+      {
+        "num": "2.4",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 30,
+        "line": 773
+      },
+      {
+        "num": "2.5",
+        "title": "正式公告試題索引",
+        "pdf_page": 31,
+        "line": 793
+      },
+      {
+        "num": "2.6",
+        "title": "自編模擬題",
+        "pdf_page": 32,
+        "line": 813
+      },
+      {
+        "num": "2.7",
+        "title": "章末複習",
+        "pdf_page": 34,
+        "line": 912
+      },
+      {
+        "num": "2.7",
+        "title": ".1一頁重點",
+        "pdf_page": 34,
+        "line": 913
+      },
+      {
+        "num": "2.7",
+        "title": ".2必背名詞",
+        "pdf_page": 35,
+        "line": 925
+      },
+      {
+        "num": "2.7",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 35,
+        "line": 928
+      },
+      {
+        "num": "2.7",
+        "title": ".4跨章連結",
+        "pdf_page": 35,
+        "line": 934
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L21102-001",
+        "pdf_page": 32,
+        "line": 814
+      },
+      {
+        "id": "SIM-L21102-002",
+        "pdf_page": 32,
+        "line": 838
+      },
+      {
+        "id": "SIM-L21102-003",
+        "pdf_page": 33,
+        "line": 855
+      },
+      {
+        "id": "SIM-L21102-004",
+        "pdf_page": 33,
+        "line": 873
+      },
+      {
+        "id": "SIM-L21102-005",
+        "pdf_page": 34,
+        "line": 889
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 3,
+    "title": "生成式 AI技術與應用",
+    "pdf_page": 36,
+    "line": 943,
+    "sections": [
+      {
+        "num": "3.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 37,
+        "line": 976
+      },
+      {
+        "num": "3.1",
+        "title": ".1鑑別式與生成式的根本差異",
+        "pdf_page": 37,
+        "line": 977
+      },
+      {
+        "num": "3.1",
+        "title": ".2三大生成架構比較",
+        "pdf_page": 37,
+        "line": 983
+      },
+      {
+        "num": "3.1",
+        "title": ".3大型語言模型（LLM）",
+        "pdf_page": 37,
+        "line": 1000
+      },
+      {
+        "num": "3.1",
+        "title": ".3.1三個必懂的生成參數",
+        "pdf_page": 37,
+        "line": 1004
+      },
+      {
+        "num": "3.1",
+        "title": ".4RLHF：從人類回饋強化學習",
+        "pdf_page": 38,
+        "line": 1016
+      },
+      {
+        "num": "3.1",
+        "title": ".5模型幻覺",
+        "pdf_page": 38,
+        "line": 1029
+      },
+      {
+        "num": "3.2",
+        "title": "應用規劃與決策流程",
+        "pdf_page": 39,
+        "line": 1042
+      },
+      {
+        "num": "3.2",
+        "title": ".1LLM應用四層策略——本章最重要的決策表",
+        "pdf_page": 39,
+        "line": 1043
+      },
+      {
+        "num": "3.2",
+        "title": ".2提示工程的基本技巧",
+        "pdf_page": 39,
+        "line": 1061
+      },
+      {
+        "num": "3.2",
+        "title": ".3檢索增強生成（RAG）基本管線",
+        "pdf_page": 39,
+        "line": 1067
+      },
+      {
+        "num": "3.2",
+        "title": ".4微調與參數效率技術概念",
+        "pdf_page": 40,
+        "line": 1077
+      },
+      {
+        "num": "3.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 40,
+        "line": 1085
+      },
+      {
+        "num": "3.4",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 40,
+        "line": 1097
+      },
+      {
+        "num": "3.5",
+        "title": "正式公告試題索引",
+        "pdf_page": 41,
+        "line": 1124
+      },
+      {
+        "num": "3.6",
+        "title": "自編模擬題",
+        "pdf_page": 42,
+        "line": 1144
+      },
+      {
+        "num": "3.7",
+        "title": "章末複習",
+        "pdf_page": 45,
+        "line": 1260
+      },
+      {
+        "num": "3.7",
+        "title": ".1一頁重點",
+        "pdf_page": 45,
+        "line": 1261
+      },
+      {
+        "num": "3.7",
+        "title": ".2必背名詞",
+        "pdf_page": 45,
+        "line": 1272
+      },
+      {
+        "num": "3.7",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 45,
+        "line": 1276
+      },
+      {
+        "num": "3.7",
+        "title": ".4跨章連結",
+        "pdf_page": 46,
+        "line": 1282
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L21103-001",
+        "pdf_page": 42,
+        "line": 1145
+      },
+      {
+        "id": "SIM-L21103-002",
+        "pdf_page": 42,
+        "line": 1162
+      },
+      {
+        "id": "SIM-L21103-003",
+        "pdf_page": 43,
+        "line": 1184
+      },
+      {
+        "id": "SIM-L21103-004",
+        "pdf_page": 43,
+        "line": 1202
+      },
+      {
+        "id": "SIM-L21103-005",
+        "pdf_page": 44,
+        "line": 1221
+      },
+      {
+        "id": "SIM-L21103-006",
+        "pdf_page": 44,
+        "line": 1239
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 4,
+    "title": "多模態人工智慧應用",
+    "pdf_page": 47,
+    "line": 1297,
+    "sections": [
+      {
+        "num": "4.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 47,
+        "line": 1326
+      },
+      {
+        "num": "4.1",
+        "title": ".1什麼是多模態 AI",
+        "pdf_page": 48,
+        "line": 1327
+      },
+      {
+        "num": "4.1",
+        "title": ".2對比式學習與共享嵌入空間",
+        "pdf_page": 48,
+        "line": 1331
+      },
+      {
+        "num": "4.1",
+        "title": ".3三種融合策略",
+        "pdf_page": 48,
+        "line": 1343
+      },
+      {
+        "num": "4.1",
+        "title": ".4典型應用場景",
+        "pdf_page": 48,
+        "line": 1356
+      },
+      {
+        "num": "4.2",
+        "title": "應用規劃與決策流程",
+        "pdf_page": 49,
+        "line": 1363
+      },
+      {
+        "num": "4.2",
+        "title": ".1三類失效與處置",
+        "pdf_page": 49,
+        "line": 1364
+      },
+      {
+        "num": "4.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 49,
+        "line": 1378
+      },
+      {
+        "num": "4.4",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 49,
+        "line": 1386
+      },
+      {
+        "num": "4.5",
+        "title": "正式公告試題索引",
+        "pdf_page": 50,
+        "line": 1407
+      },
+      {
+        "num": "4.6",
+        "title": "自編模擬題",
+        "pdf_page": 51,
+        "line": 1424
+      },
+      {
+        "num": "4.7",
+        "title": "章末複習",
+        "pdf_page": 53,
+        "line": 1500
+      },
+      {
+        "num": "4.7",
+        "title": ".1一頁重點",
+        "pdf_page": 53,
+        "line": 1501
+      },
+      {
+        "num": "4.7",
+        "title": ".2必背名詞",
+        "pdf_page": 53,
+        "line": 1509
+      },
+      {
+        "num": "4.7",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 53,
+        "line": 1513
+      },
+      {
+        "num": "4.7",
+        "title": ".4跨章連結",
+        "pdf_page": 53,
+        "line": 1519
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L21104-001",
+        "pdf_page": 51,
+        "line": 1425
+      },
+      {
+        "id": "SIM-L21104-002",
+        "pdf_page": 51,
+        "line": 1447
+      },
+      {
+        "id": "SIM-L21104-003",
+        "pdf_page": 52,
+        "line": 1463
+      },
+      {
+        "id": "SIM-L21104-004",
+        "pdf_page": 52,
+        "line": 1481
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 5,
+    "title": "AI導入評估",
+    "pdf_page": 56,
+    "line": 1530,
+    "sections": [
+      {
+        "num": "5.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 57,
+        "line": 1560
+      },
+      {
+        "num": "5.1",
+        "title": ".1四層可行性評估",
+        "pdf_page": 57,
+        "line": 1561
+      },
+      {
+        "num": "5.1",
+        "title": ".2技術與工具效能評估",
+        "pdf_page": 57,
+        "line": 1571
+      },
+      {
+        "num": "5.1",
+        "title": ".3總持有成本（TCO）",
+        "pdf_page": 57,
+        "line": 1581
+      },
+      {
+        "num": "5.1",
+        "title": ".4三種效益型態",
+        "pdf_page": 58,
+        "line": 1591
+      },
+      {
+        "num": "5.1",
+        "title": ".5四個必會的財務指標",
+        "pdf_page": 58,
+        "line": 1599
+      },
+      {
+        "num": "5.2",
+        "title": "應用規劃與決策流程",
+        "pdf_page": 58,
+        "line": 1611
+      },
+      {
+        "num": "5.2",
+        "title": ".1階段閘門：POC到 Production",
+        "pdf_page": 58,
+        "line": 1612
+      },
+      {
+        "num": "5.2",
+        "title": ".2自建、採購與混合",
+        "pdf_page": 59,
+        "line": 1629
+      },
+      {
+        "num": "5.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 59,
+        "line": 1639
+      },
+      {
+        "num": "5.4",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 59,
+        "line": 1648
+      },
+      {
+        "num": "5.5",
+        "title": "正式公告試題索引",
+        "pdf_page": 60,
+        "line": 1667
+      },
+      {
+        "num": "5.6",
+        "title": "自編模擬題",
+        "pdf_page": 61,
+        "line": 1684
+      },
+      {
+        "num": "5.7",
+        "title": "章末複習",
+        "pdf_page": 63,
+        "line": 1780
+      },
+      {
+        "num": "5.7",
+        "title": ".1一頁重點",
+        "pdf_page": 63,
+        "line": 1781
+      },
+      {
+        "num": "5.7",
+        "title": ".2必背名詞",
+        "pdf_page": 64,
+        "line": 1792
+      },
+      {
+        "num": "5.7",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 64,
+        "line": 1795
+      },
+      {
+        "num": "5.7",
+        "title": ".4跨章連結",
+        "pdf_page": 64,
+        "line": 1801
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L21201-001",
+        "pdf_page": 61,
+        "line": 1685
+      },
+      {
+        "id": "SIM-L21201-002",
+        "pdf_page": 61,
+        "line": 1704
+      },
+      {
+        "id": "SIM-L21201-003",
+        "pdf_page": 62,
+        "line": 1722
+      },
+      {
+        "id": "SIM-L21201-004",
+        "pdf_page": 62,
+        "line": 1739
+      },
+      {
+        "id": "SIM-L21201-005",
+        "pdf_page": 63,
+        "line": 1760
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 6,
+    "title": "AI導入規劃",
+    "pdf_page": 65,
+    "line": 1811,
+    "sections": [
+      {
+        "num": "6.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 65,
+        "line": 1839
+      },
+      {
+        "num": "6.1",
+        "title": ".1CRISP-DM六階段",
+        "pdf_page": 66,
+        "line": 1840
+      },
+      {
+        "num": "6.1",
+        "title": ".2需求轉譯：從業務語言到機器學習問題",
+        "pdf_page": 66,
+        "line": 1849
+      },
+      {
+        "num": "6.1",
+        "title": ".3四層 KPI與護欄指標",
+        "pdf_page": 66,
+        "line": 1869
+      },
+      {
+        "num": "6.1",
+        "title": ".4資源分配與角色分工",
+        "pdf_page": 67,
+        "line": 1883
+      },
+      {
+        "num": "6.2",
+        "title": "應用規劃與決策流程",
+        "pdf_page": 67,
+        "line": 1892
+      },
+      {
+        "num": "6.2",
+        "title": ".1規劃書應回答的十個問題",
+        "pdf_page": 67,
+        "line": 1893
+      },
+      {
+        "num": "6.2",
+        "title": ".2常見規劃缺陷與矯正",
+        "pdf_page": 68,
+        "line": 1905
+      },
+      {
+        "num": "6.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 68,
+        "line": 1917
+      },
+      {
+        "num": "6.4",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 68,
+        "line": 1925
+      },
+      {
+        "num": "6.5",
+        "title": "正式公告試題索引",
+        "pdf_page": 69,
+        "line": 1942
+      },
+      {
+        "num": "6.6",
+        "title": "自編模擬題",
+        "pdf_page": 69,
+        "line": 1955
+      },
+      {
+        "num": "6.7",
+        "title": "章末複習",
+        "pdf_page": 71,
+        "line": 2028
+      },
+      {
+        "num": "6.7",
+        "title": ".1一頁重點",
+        "pdf_page": 71,
+        "line": 2029
+      },
+      {
+        "num": "6.7",
+        "title": ".2必背名詞",
+        "pdf_page": 72,
+        "line": 2039
+      },
+      {
+        "num": "6.7",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 72,
+        "line": 2043
+      },
+      {
+        "num": "6.7",
+        "title": ".4跨章連結",
+        "pdf_page": 72,
+        "line": 2049
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L21202-001",
+        "pdf_page": 69,
+        "line": 1956
+      },
+      {
+        "id": "SIM-L21202-002",
+        "pdf_page": 70,
+        "line": 1974
+      },
+      {
+        "id": "SIM-L21202-003",
+        "pdf_page": 70,
+        "line": 1991
+      },
+      {
+        "id": "SIM-L21202-004",
+        "pdf_page": 71,
+        "line": 2010
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 7,
+    "title": "AI風險管理",
+    "pdf_page": 73,
+    "line": 2059,
+    "sections": [
+      {
+        "num": "7.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 74,
+        "line": 2097
+      },
+      {
+        "num": "7.1",
+        "title": ".1風險四象限",
+        "pdf_page": 74,
+        "line": 2098
+      },
+      {
+        "num": "7.1",
+        "title": ".2風險應對的四種策略",
+        "pdf_page": 74,
+        "line": 2109
+      },
+      {
+        "num": "7.1",
+        "title": ".3負責任 AI的五個可操作要素",
+        "pdf_page": 75,
+        "line": 2121
+      },
+      {
+        "num": "7.2",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 75,
+        "line": 2137
+      },
+      {
+        "num": "7.2",
+        "title": ".1國際框架對照（僅供比較）",
+        "pdf_page": 77,
+        "line": 2202
+      },
+      {
+        "num": "7.3",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 77,
+        "line": 2212
+      },
+      {
+        "num": "7.4",
+        "title": "正式公告試題索引",
+        "pdf_page": 78,
+        "line": 2224
+      },
+      {
+        "num": "7.5",
+        "title": "自編模擬題",
+        "pdf_page": 78,
+        "line": 2244
+      },
+      {
+        "num": "7.6",
+        "title": "章末複習",
+        "pdf_page": 81,
+        "line": 2364
+      },
+      {
+        "num": "7.6",
+        "title": ".1一頁重點",
+        "pdf_page": 81,
+        "line": 2365
+      },
+      {
+        "num": "7.6",
+        "title": ".2必背名詞",
+        "pdf_page": 82,
+        "line": 2381
+      },
+      {
+        "num": "7.6",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 82,
+        "line": 2384
+      },
+      {
+        "num": "7.6",
+        "title": ".4跨章連結",
+        "pdf_page": 82,
+        "line": 2390
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L21203-001",
+        "pdf_page": 78,
+        "line": 2245
+      },
+      {
+        "id": "SIM-L21203-002",
+        "pdf_page": 79,
+        "line": 2269
+      },
+      {
+        "id": "SIM-L21203-003",
+        "pdf_page": 79,
+        "line": 2286
+      },
+      {
+        "id": "SIM-L21203-004",
+        "pdf_page": 80,
+        "line": 2303
+      },
+      {
+        "id": "SIM-L21203-005",
+        "pdf_page": 80,
+        "line": 2323
+      },
+      {
+        "id": "SIM-L21203-006",
+        "pdf_page": 81,
+        "line": 2342
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 8,
+    "title": "數據準備與模型選擇",
+    "pdf_page": 85,
+    "line": 2407,
+    "sections": [
+      {
+        "num": "8.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 85,
+        "line": 2436
+      },
+      {
+        "num": "8.1",
+        "title": ".1前處理的正確順序",
+        "pdf_page": 86,
+        "line": 2437
+      },
+      {
+        "num": "8.1",
+        "title": ".2缺失值處置",
+        "pdf_page": 86,
+        "line": 2454
+      },
+      {
+        "num": "8.1",
+        "title": ".3離群值：不一定要刪除",
+        "pdf_page": 86,
+        "line": 2466
+      },
+      {
+        "num": "8.1",
+        "title": ".4類別編碼與特徵縮放",
+        "pdf_page": 87,
+        "line": 2472
+      },
+      {
+        "num": "8.1",
+        "title": ".5模型選型決策表",
+        "pdf_page": 87,
+        "line": 2487
+      },
+      {
+        "num": "8.2",
+        "title": "常見陷阱與錯誤觀念",
+        "pdf_page": 88,
+        "line": 2500
+      },
+      {
+        "num": "8.3",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 88,
+        "line": 2515
+      },
+      {
+        "num": "8.4",
+        "title": "正式公告試題索引",
+        "pdf_page": 89,
+        "line": 2531
+      },
+      {
+        "num": "8.5",
+        "title": "自編模擬題",
+        "pdf_page": 90,
+        "line": 2565
+      },
+      {
+        "num": "8.6",
+        "title": "章末複習",
+        "pdf_page": 92,
+        "line": 2639
+      },
+      {
+        "num": "8.6",
+        "title": ".1一頁重點",
+        "pdf_page": 92,
+        "line": 2640
+      },
+      {
+        "num": "8.6",
+        "title": ".2必背名詞",
+        "pdf_page": 92,
+        "line": 2649
+      },
+      {
+        "num": "8.6",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 92,
+        "line": 2653
+      },
+      {
+        "num": "8.6",
+        "title": ".4跨章連結",
+        "pdf_page": 92,
+        "line": 2659
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L21301-001",
+        "pdf_page": 90,
+        "line": 2566
+      },
+      {
+        "id": "SIM-L21301-002",
+        "pdf_page": 90,
+        "line": 2584
+      },
+      {
+        "id": "SIM-L21301-003",
+        "pdf_page": 91,
+        "line": 2599
+      },
+      {
+        "id": "SIM-L21301-004",
+        "pdf_page": 91,
+        "line": 2618
+      }
+    ]
+  },
+  {
+    "kind": "chapter",
+    "num": 9,
+    "title": "AI技術系統集成與部署",
+    "pdf_page": 93,
+    "line": 2668,
+    "sections": [
+      {
+        "num": "9.1",
+        "title": "核心概念與技術原理",
+        "pdf_page": 94,
+        "line": 2702
+      },
+      {
+        "num": "9.1",
+        "title": ".1四種推論型態",
+        "pdf_page": 94,
+        "line": 2703
+      },
+      {
+        "num": "9.1",
+        "title": ".2系統架構設計要點",
+        "pdf_page": 94,
+        "line": 2718
+      },
+      {
+        "num": "9.1",
+        "title": ".3四種發布策略",
+        "pdf_page": 94,
+        "line": 2729
+      },
+      {
+        "num": "9.1",
+        "title": ".4MLOps：比 DevOps多一條線",
+        "pdf_page": 95,
+        "line": 2745
+      },
+      {
+        "num": "9.1",
+        "title": ".5監控：四層指標",
+        "pdf_page": 95,
+        "line": 2762
+      },
+      {
+        "num": "9.1",
+        "title": ".6兩種漂移必須分清",
+        "pdf_page": 96,
+        "line": 2773
+      },
+      {
+        "num": "9.1",
+        "title": ".7重訓觸發策略",
+        "pdf_page": 96,
+        "line": 2786
+      },
+      {
+        "num": "9.2",
+        "title": "應用規劃與決策流程",
+        "pdf_page": 97,
+        "line": 2798
+      },
+      {
+        "num": "9.2",
+        "title": ".1十個真實部署陷阱",
+        "pdf_page": 97,
+        "line": 2799
+      },
+      {
+        "num": "9.2",
+        "title": ".2雲端、地端與混合",
+        "pdf_page": 97,
+        "line": 2814
+      },
+      {
+        "num": "9.3",
+        "title": "政府指引與產業落地實務",
+        "pdf_page": 98,
+        "line": 2824
+      },
+      {
+        "num": "9.4",
+        "title": "正式公告試題索引",
+        "pdf_page": 98,
+        "line": 2846
+      },
+      {
+        "num": "9.5",
+        "title": "自編模擬題",
+        "pdf_page": 99,
+        "line": 2879
+      },
+      {
+        "num": "9.6",
+        "title": "章末複習",
+        "pdf_page": 102,
+        "line": 2982
+      },
+      {
+        "num": "9.6",
+        "title": ".1一頁重點",
+        "pdf_page": 102,
+        "line": 2983
+      },
+      {
+        "num": "9.6",
+        "title": ".2必背名詞",
+        "pdf_page": 102,
+        "line": 2995
+      },
+      {
+        "num": "9.6",
+        "title": ".3五分鐘快速複習",
+        "pdf_page": 103,
+        "line": 2998
+      },
+      {
+        "num": "9.6",
+        "title": ".4跨章連結",
+        "pdf_page": 103,
+        "line": 3004
+      }
+    ],
+    "sims": [
+      {
+        "id": "SIM-L21302-001",
+        "pdf_page": 99,
+        "line": 2880
+      },
+      {
+        "id": "SIM-L21302-002",
+        "pdf_page": 100,
+        "line": 2901
+      },
+      {
+        "id": "SIM-L21302-003",
+        "pdf_page": 100,
+        "line": 2925
+      },
+      {
+        "id": "SIM-L21302-004",
+        "pdf_page": 101,
+        "line": 2942
+      },
+      {
+        "id": "SIM-L21302-005",
+        "pdf_page": 101,
+        "line": 2962
+      }
+    ]
+  },
+  {
+    "kind": "appendix",
+    "num": 10,
+    "label": "A",
+    "title": "政府指引速查表",
+    "pdf_page": 105,
+    "line": 3019,
+    "sections": [
+      {
+        "num": "10.1",
+        "title": "文件性質與拘束力對照",
+        "pdf_page": 105,
+        "line": 3021
+      },
+      {
+        "num": "10.2",
+        "title": "必背清單",
+        "pdf_page": 106,
+        "line": 3048
+      },
+      {
+        "num": "10.3",
+        "title": "三個最容易記反的細節",
+        "pdf_page": 106,
+        "line": 3068
+      },
+      {
+        "num": "10.4",
+        "title": "寫作與作答句型",
+        "pdf_page": 106,
+        "line": 3075
+      }
+    ],
+    "sims": []
+  },
+  {
+    "kind": "appendix",
+    "num": 11,
+    "label": "D",
+    "title": "勘誤、來源登錄與補件流程",
+    "pdf_page": 108,
+    "line": 3084,
+    "sections": [
+      {
+        "num": "11.1",
+        "title": "已套用之勘誤",
+        "pdf_page": 108,
+        "line": 3085
+      },
+      {
+        "num": "11.2",
+        "title": "編號正規化紀錄",
+        "pdf_page": 108,
+        "line": 3095
+      },
+      {
+        "num": "11.3",
+        "title": "本冊來源登錄",
+        "pdf_page": 108,
+        "line": 3103
+      },
+      {
+        "num": "11.4",
+        "title": "未解決之資料缺口與補件流程",
+        "pdf_page": 109,
+        "line": 3134
+      },
+      {
+        "num": "11.53",
+        "title": "00題正式公告試題索引之採用與限制",
+        "pdf_page": 109,
+        "line": 3143
+      },
+      {
+        "num": "11.6",
+        "title": "新增來源與待釐清之分類差異",
+        "pdf_page": 110,
+        "line": 3168
+      },
+      {
+        "num": "11.7",
+        "title": "正式試題之著作權處理原則",
+        "pdf_page": 111,
+        "line": 3203
+      },
+      {
+        "num": "11.8",
+        "title": "本冊建置狀態",
+        "pdf_page": 112,
+        "line": 3210
+      }
+    ],
+    "sims": []
+  }
+]

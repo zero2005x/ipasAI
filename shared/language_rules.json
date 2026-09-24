@@ -1,0 +1,151 @@
+{
+  "_source": "iPAS_中級教科書_對話.txt 第二輪 Q7，使用者回覆「建議全部核准」。規格 §自動檢查與編譯關卡 註明：絕對化用語是否加進自動檢查「尚未決定」——本檔預設以『列出位置』而非『阻斷編譯』的方式執行。",
+  "_severity_note": "以下是第二輪核准的 15 則具體改寫，優先於通用偵測。通用偵測（必然／唯一／一律／不會／必須／絕不／完全）只輸出位置，交編者逐條判斷。",
+  "approved_rewrites": [
+    {
+      "id": "ABS-01",
+      "volumes": ["L21"],
+      "old_pages": [5],
+      "original_looks_like": "Perplexity 是唯一「越小越好」的常考指標",
+      "rewrite": "Perplexity 越小越好（WER、CER 也是）",
+      "pattern": "Perplexity[^\\n]{0,40}唯一",
+      "reason": "唯一化用語，且事實不成立"
+    },
+    {
+      "id": "ABS-02",
+      "volumes": ["L21"],
+      "old_pages": [15, 19, 20],
+      "original_looks_like": "mAP@[.5:.95] 必然低於 mAP@0.5",
+      "rewrite": "不會高於 mAP@0.5，實務上通常明顯較低",
+      "pattern": "mAP[^\\n]{0,60}必然低於",
+      "reason": "數學上可證明為『不高於』，但用『必然低於』過強"
+    },
+    {
+      "id": "ABS-03",
+      "volumes": ["L21"],
+      "old_pages": [23, 28],
+      "original_looks_like": "Diffusion、VAE 沒有判別器，不會發生模式崩潰",
+      "rewrite": "模式崩潰是 GAN 的典型問題；Diffusion、VAE 較少見，但仍可能多樣性不足",
+      "pattern": "(Diffusion|VAE)[^\\n]{0,60}不會[^\\n]{0,10}模式崩潰",
+      "reason": "事實敘述過強"
+    },
+    {
+      "id": "ABS-04",
+      "volumes": ["L21"],
+      "old_pages": [25],
+      "original_looks_like": "微調不會讓模型獲得它沒學過的事實",
+      "rewrite": "微調不是注入新事實的可靠方法，也無法提供可追溯的出處",
+      "pattern": "微調[^\\n]{0,30}不會[^\\n]{0,30}事實",
+      "reason": "不只是措辭，是事實錯誤；須一併檢查 SIM-L21103-002、003 的解析"
+    },
+    {
+      "id": "ABS-05",
+      "volumes": ["L21", "L22", "L23"],
+      "old_pages": null,
+      "original_looks_like": "PCA 前必須標準化",
+      "rewrite": "特徵單位或尺度不同時必須標準化；同單位的資料至少要中心化",
+      "pattern": "PCA[^\\n]{0,40}必須[^\\n]{0,10}標準化",
+      "reason": "條件句被寫成無條件命令"
+    },
+    {
+      "id": "ABS-06",
+      "volumes": ["L22"],
+      "old_pages": [37, 43],
+      "original_looks_like": "MapReduce 中間結果寫回 HDFS",
+      "rewrite": "map 輸出寫到本機磁碟，作業之間經 HDFS 落地；兩者都要磁碟往返",
+      "pattern": "中間結果[^\\n]{0,20}(寫回|存回)[^\\n]{0,6}HDFS",
+      "reason": "事實錯誤"
+    },
+    {
+      "id": "ABS-07",
+      "volumes": ["L22"],
+      "old_pages": [45],
+      "original_looks_like": "未指定分區鍵時輪流分派",
+      "rewrite": "未指定分區鍵時由預設分區器分配，同一帳戶的訊息不保證落在同一分區",
+      "pattern": "未指定分區鍵[^\\n]{0,30}輪流",
+      "reason": "簡化了實際行為"
+    },
+    {
+      "id": "ABS-08",
+      "volumes": ["L22"],
+      "old_pages": [42],
+      "original_looks_like": "groupBy 必然觸發 Shuffle",
+      "rewrite": "通常會觸發 Shuffle；資料已依該鍵分桶時可以免除",
+      "pattern": "groupBy[^\\n]{0,30}必然",
+      "reason": "存在反例"
+    },
+    {
+      "id": "ABS-09",
+      "volumes": ["L22"],
+      "old_pages": [17],
+      "original_looks_like": "未校正必然產生偽陽性",
+      "rewrite": "未校正時出現偽陽性的機率很高",
+      "pattern": "未校正[^\\n]{0,30}必然",
+      "reason": "機率語言被寫成必然"
+    },
+    {
+      "id": "ABS-10",
+      "volumes": ["L22"],
+      "old_pages": [33],
+      "original_looks_like": "分區必然發生",
+      "rewrite": "無法排除分區發生",
+      "pattern": "分區必然發生",
+      "reason": "存在反例"
+    },
+    {
+      "id": "ABS-11",
+      "volumes": ["L22"],
+      "old_pages": [69],
+      "original_looks_like": "人口多的區域必然數字大",
+      "rewrite": "人口多的區域通常數字較大",
+      "pattern": "人口多[^\\n]{0,30}必然",
+      "reason": "統計傾向被寫成必然"
+    },
+    {
+      "id": "ABS-12",
+      "volumes": ["L23"],
+      "old_pages": [3],
+      "original_looks_like": "分類任務一律用交叉熵",
+      "rewrite": "神經網路分類以交叉熵為標準選擇（SVM 用 hinge loss）",
+      "pattern": "分類[^\\n]{0,30}一律[^\\n]{0,6}交叉熵",
+      "reason": "唯一化用語，且反例常見"
+    },
+    {
+      "id": "ABS-13",
+      "volumes": ["L23"],
+      "old_pages": [80],
+      "original_looks_like": "巢狀交叉驗證是唯一嚴謹的作法",
+      "rewrite": "巢狀交叉驗證是標準的嚴謹作法",
+      "pattern": "巢狀交叉驗證[^\\n]{0,30}唯一",
+      "reason": "唯一化用語"
+    },
+    {
+      "id": "ABS-14",
+      "volumes": ["L23"],
+      "old_pages": [60],
+      "original_looks_like": "基準線是唯一參照",
+      "rewrite": "基準線是必要的參照",
+      "pattern": "基準線[^\\n]{0,20}唯一",
+      "reason": "唯一化用語"
+    },
+    {
+      "id": "ABS-15",
+      "volumes": ["L21", "L23"],
+      "old_pages": null,
+      "original_looks_like": "從頭訓練必然嚴重過擬合",
+      "rewrite": "從頭訓練極易過擬合",
+      "pattern": "從頭訓練[^\\n]{0,30}必然",
+      "reason": "程度語言被寫成必然"
+    }
+  ],
+  "generic_patterns": [
+    { "pattern": "必然", "note": "除數學保證外一律改寫" },
+    { "pattern": "唯一", "note": "除數學保證外一律改寫" },
+    { "pattern": "一律", "note": "除規則明文外一律改寫" },
+    { "pattern": "絕不", "note": "改為『通常不會』或加上條件" },
+    { "pattern": "完全不會", "note": "改為『通常不會』或加上條件" },
+    { "pattern": "永遠不會", "note": "改為『通常不會』或加上條件" },
+    { "pattern": "所有[^\\n]{0,8}都", "note": "檢查是否過度概括" }
+  ],
+  "write_rule": "解析不得使用必然／唯一／不會，除非有數學保證。有數學保證時須寫出保證的來源（例如『由定義可直接推得』）。"
+}

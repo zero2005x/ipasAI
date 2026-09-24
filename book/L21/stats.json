@@ -1,0 +1,20 @@
+{
+  "volume": "L21",
+  "sim_total": 44,
+  "sim_by_code": {
+    "L21101": 5,
+    "L21102": 5,
+    "L21103": 6,
+    "L21104": 4,
+    "L21201": 5,
+    "L21202": 4,
+    "L21203": 6,
+    "L21301": 4,
+    "L21302": 5
+  },
+  "program_sim_total": 0,
+  "chapters": 9,
+  "appendices": 2,
+  "sections": 169,
+  "pdf_pages": 112
+}

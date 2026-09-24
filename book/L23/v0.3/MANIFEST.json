@@ -1,0 +1,110 @@
+{
+  "volume": "L23",
+  "files": [
+    {
+      "file": "front/免責與使用聲明.md",
+      "bytes": 1550,
+      "lines": 22
+    },
+    {
+      "file": "front/導讀.md",
+      "bytes": 2535,
+      "lines": 32
+    },
+    {
+      "file": "front/授證路線導航.md",
+      "bytes": 628,
+      "lines": 13
+    },
+    {
+      "file": "front/考試規則速覽.md",
+      "bytes": 914,
+      "lines": 16
+    },
+    {
+      "file": "front/考綱地圖.md",
+      "bytes": 2342,
+      "lines": 34
+    },
+    {
+      "file": "front/我國_AI法制時間軸.md",
+      "bytes": 6631,
+      "lines": 116
+    },
+    {
+      "file": "ch01.md",
+      "bytes": 15617,
+      "lines": 321
+    },
+    {
+      "file": "ch02.md",
+      "bytes": 11551,
+      "lines": 262
+    },
+    {
+      "file": "ch03.md",
+      "bytes": 15936,
+      "lines": 334
+    },
+    {
+      "file": "ch04.md",
+      "bytes": 10710,
+      "lines": 230
+    },
+    {
+      "file": "ch05.md",
+      "bytes": 14153,
+      "lines": 298
+    },
+    {
+      "file": "ch06.md",
+      "bytes": 19274,
+      "lines": 391
+    },
+    {
+      "file": "ch07.md",
+      "bytes": 17259,
+      "lines": 347
+    },
+    {
+      "file": "ch08.md",
+      "bytes": 11384,
+      "lines": 246
+    },
+    {
+      "file": "ch09.md",
+      "bytes": 23817,
+      "lines": 471
+    },
+    {
+      "file": "ch10.md",
+      "bytes": 18775,
+      "lines": 373
+    },
+    {
+      "file": "ch11.md",
+      "bytes": 14883,
+      "lines": 267
+    },
+    {
+      "file": "ch12.md",
+      "bytes": 15632,
+      "lines": 297
+    },
+    {
+      "file": "apxA.md",
+      "bytes": 4096,
+      "lines": 86
+    },
+    {
+      "file": "apxD.md",
+      "bytes": 6363,
+      "lines": 125
+    },
+    {
+      "file": "REVIEW.md",
+      "bytes": 3848,
+      "lines": 103
+    }
+  ]
+}

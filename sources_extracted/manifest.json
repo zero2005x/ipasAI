@@ -1,0 +1,163 @@
+[
+  {
+    "id": "book_L21",
+    "filename": "iPAS_中級教科書_第I冊_L21_v0.2.0.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\iPAS_中級教科書_第I冊_L21_v0.2.0.pdf",
+    "pages": 112,
+    "chars": 165788,
+    "sha256": "be3d788e843730f12bef90bfd767b5cd57875976ba3fd77a99771c856e7ff630"
+  },
+  {
+    "id": "guide_L21",
+    "filename": "AI應用規劃師(中級)-學習指引-科目1人工智慧技術應用規劃_20251222101833.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\AI應用規劃師(中級)-學習指引-科目1人工智慧技術應用規劃_20251222101833.pdf",
+    "pages": 168,
+    "chars": 152578,
+    "sha256": "7b1c67e3280600fbeca893bc1c13421d5aa44841272c34b456f1346731bf3812"
+  },
+  {
+    "id": "exam_114_2_L21",
+    "filename": "114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\114年第二梯次中級AI應用規劃師第一科人工智慧技術應用與規劃(當次試題公告114_20251226000616.pdf",
+    "pages": 14,
+    "chars": 20212,
+    "sha256": "5e4860eee6faa50e735c7e8139e559b3b6f3b8dbd36398624942485eb3a3ac29"
+  },
+  {
+    "id": "exam_115_1_L21",
+    "filename": "115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\115年第一次中級AI應用規劃師_第一科_人工智慧技術應用與規劃_公告試題_20260615003359.pdf",
+    "pages": 15,
+    "chars": 24791,
+    "sha256": "86a52c105ec68048060eb4b20f3ba92213267fd8c7dfdb718fbcc0c28f90f179"
+  },
+  {
+    "id": "book_L22",
+    "filename": "iPAS_中級教科書_第II冊_L22_v0.2.0.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\iPAS_中級教科書_第II冊_L22_v0.2.0.pdf",
+    "pages": 118,
+    "chars": 176996,
+    "sha256": "4f290185a88ab8e0c095d86c2e4d4a1290861ede44c5a0aff963c57f96e574d6"
+  },
+  {
+    "id": "guide_L22",
+    "filename": "AI應用規劃師(中級)-學習指引-科目2大數據處理分析與應用_20251222101850.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\AI應用規劃師(中級)-學習指引-科目2大數據處理分析與應用_20251222101850.pdf",
+    "pages": 182,
+    "chars": 154694,
+    "sha256": "cae491470cb756ed4323b11e19459465383e2d93ee5f0e4abfcd8f4983b49933"
+  },
+  {
+    "id": "exam_114_2_L22",
+    "filename": "114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\114年第二梯次中級AI應用規劃師第二科大數據處理分析與應用(當次試題公告114_20251226000634.pdf",
+    "pages": 17,
+    "chars": 19552,
+    "sha256": "f1ff76de3aea6ba8365764fd848bab0109a7790fdf2c85197106456d6e4ad967"
+  },
+  {
+    "id": "exam_115_1_L22",
+    "filename": "115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\115年第一次中級AI應用規劃師_第二科_大數據處理分析與應用_公告試題_20260615003417.pdf",
+    "pages": 17,
+    "chars": 24754,
+    "sha256": "86436d512dcd8e323fa3351c4254d7135adf92095c11a988616ddf449837effd"
+  },
+  {
+    "id": "book_L23",
+    "filename": "iPAS_中級教科書_第III冊_L23_v0.2.0.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\iPAS_中級教科書_第III冊_L23_v0.2.0.pdf",
+    "pages": 117,
+    "chars": 171896,
+    "sha256": "6366b0db11d55e914cd065977e8d156fde13db932d830585bd08d051d9528c64"
+  },
+  {
+    "id": "guide_L23",
+    "filename": "AI應用規劃師(中級)-學習指引-科目3機器學習技術與應用_20251222101907.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\AI應用規劃師(中級)-學習指引-科目3機器學習技術與應用_20251222101907.pdf",
+    "pages": 223,
+    "chars": 185812,
+    "sha256": "cc4300a4133276509f34750313f65fd02e4bd1960366fc604f236f057719247a"
+  },
+  {
+    "id": "exam_114_2_L23",
+    "filename": "114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\114年第二梯次中級AI應用規劃師第三科機器學習技術與應用(當次試題公告114_20251226000650.pdf",
+    "pages": 19,
+    "chars": 23864,
+    "sha256": "c9495cac9a8b58a6af2994d633613cb8e911aed347842e71f2c29e79abc9d1d3"
+  },
+  {
+    "id": "exam_115_1_L23",
+    "filename": "115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\115年第一次中級AI應用規劃師_第三科_機器學習技術與應用_公告試題_20260615003428.pdf",
+    "pages": 18,
+    "chars": 24028,
+    "sha256": "96c553d232e0902a4973a612d3c44c5867466bb21af626e7480f9a1e76a03e76"
+  },
+  {
+    "id": "scope_11506",
+    "filename": "AI應用規劃師能力鑑定_評鑑內容範圍參考_11506_20260602161501.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\AI應用規劃師能力鑑定_評鑑內容範圍參考_11506_20260602161501.pdf",
+    "pages": 4,
+    "chars": 7196,
+    "sha256": "a17fe1adff923c1856325494c3192cec6bb1ee33488fcdba1bf8723f6f80f457"
+  },
+  {
+    "id": "errata_1150410",
+    "filename": "AI應用規劃師(中級)_學習指引勘誤表_1150410_20260410150331.pdf",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\AI應用規劃師(中級)_學習指引勘誤表_1150410_20260410150331.pdf",
+    "pages": 7,
+    "chars": 8086,
+    "sha256": "93d5a7cac94e8d5684bc90f5b9acdea263b916307cdb0710752f93aca1a7b6df"
+  },
+  {
+    "id": "考過但本冊未教.csv",
+    "filename": "考過但本冊未教.csv",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\考過但本冊未教.csv",
+    "chars": 4469,
+    "sha256": "1b7b0b06208a9d78ddc4434b5d94d27413e23d3d55c23f9d6623f0efb709b99d"
+  },
+  {
+    "id": "學習指引涵蓋缺口清單.csv",
+    "filename": "學習指引涵蓋缺口清單.csv",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\學習指引涵蓋缺口清單.csv",
+    "chars": 3543,
+    "sha256": "9595b210168854c29cca4acaf9ff9cb318a0e7f309b4c87c7cd8dc281ab6ab1c"
+  },
+  {
+    "id": "書有指引無_待試題驗證.csv",
+    "filename": "書有指引無_待試題驗證.csv",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\書有指引無_待試題驗證.csv",
+    "chars": 595,
+    "sha256": "1b08d4ca65640a1d4b09e6fa6fc223977e1cdc5d1beb8bbc81964c37446440e3"
+  },
+  {
+    "id": "待判定主題_試題判定.csv",
+    "filename": "待判定主題_試題判定.csv",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\待判定主題_試題判定.csv",
+    "chars": 1941,
+    "sha256": "95bd5b6239baf627be35b2321d67586367f3c0a22270bb77e9c33eed5f5bbf7c"
+  },
+  {
+    "id": "學習指引頁碼對照.csv",
+    "filename": "學習指引頁碼對照.csv",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\學習指引頁碼對照.csv",
+    "chars": 731,
+    "sha256": "655c599aab5e3822f79916d0028d046834ce1c71183669fcda8bad5fc46cbf4d"
+  },
+  {
+    "id": "iPAS_中級教科書_對話.txt",
+    "filename": "iPAS_中級教科書_對話.txt",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\iPAS_中級教科書_對話.txt",
+    "chars": 9198,
+    "sha256": "fec73fd8ad8a8d61f2e3d0a9f1f38026ca2c856276a05abfaca995679f41b0ce"
+  },
+  {
+    "id": "iPAS 中級考綱教科書 v0.3 修訂規格.md",
+    "filename": "iPAS 中級考綱教科書 v0.3 修訂規格.md",
+    "path": "C:\\Users\\liangtinglin\\Downloads\\iPAS 中級考綱教科書 v0.3 修訂規格.md",
+    "chars": 9251,
+    "sha256": "80f44b92ac3e99b166a269b4d9fca43d2e78ad40914d1f9549053acf7a468b34"
+  }
+]

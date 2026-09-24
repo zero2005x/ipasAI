@@ -1,0 +1,177 @@
+數據處理技術與工具
+章節識別卡
+官方代碼                                L22203
+官方名稱         數據處理技術與工具
+官方備註                                Apache  Spark、Hadoop、Kafka、批次  vs串流處理
+所屬                                               L22／  L222大數據處理技術
+授證路線                                DATA_ANALYSIS
+資料截止日       中華民國  115年  8月  1日
+對應來源         IPAS‑SCOPE‑11502、IPAS‑GUIDE‑L22（頁碼                 PENDING）
+層級分布                核心必考     70%　    官方補充     20%　    政府實務     0%　    產業延伸     10%
+先備知識                                Chapter4、Chapter5；分散式系統基本概念
+建議時數                                3.5小時
+本版題數         模擬題  7題（含程式判讀  3題）
+備註                                               L22命題密度最高之單一章節，官方備註欄逐項點名工具
+學習目標
+1. 比較批次處理與串流處理的適用情境與關鍵指標。
+2. 說明  Hadoop  MapReduce與  Spark的效能差異來源。
+3. 判斷  Spark操作屬  Transformation或  Action，並預測運算何時真正發生。
+4. 辨識會觸發  Shuffle的操作，並診斷資料傾斜。
+5. 說明  Kafka在資料架構中的解耦與緩衝角色。
+6. 區分事件時間與處理時間，並選擇適當的視窗型態。
+考綱對位
+代碼       官方主題         本章節點                       正式題     程式題   政府文件
+L22203     數據處理技術與                   批次  vs串流處理                見索引     無       —
+工具
+L22203     同上                                                 Hadoop  MapReduce與  HDFS    見索引     無       —
+L22203     同上                                                 Spark惰性求值與  DAG        見索引     有       —
+L22203     同上                                                 Transformation  vs  Action     見索引     有       —
+L22203     同上                                                 Shuffle與資料傾斜              見索引     有       —
+L22203     同上                                                 Kafka與事件串流               見索引     無       —
+代碼       官方主題         本章節點                       正式題     程式題   政府文件
+L22203     同上             事件時間、水位線與視窗         見索引     無       —
+6.1核心概念與技術原理
+6.1.1批次與串流
+核心必考
+批次處理                       串流處理
+處理單位       有界資料集（一天、一個月）     無界的連續事件流
+延遲           分鐘至小時                     毫秒至秒
+典型引擎       分散式批次運算框架             事件串流平台＋串流運算引擎
+適用           月結報表、大規模模型訓練、歷           即時風控、物聯網告警、動態定價
+史回溯
+關鍵指標       吞吐量、完成時間               端到端延遲、背壓處理
+選型訊號
+「每日凌晨統一計算」「重跑歷史三年資料」→批次。
+「交易發生當下就要判定」「感測器持續送出讀值」→串流。
+微批次（micro-batch）是折衷：把串流切成很短的批次處理，延遲通常在秒級，兼顧吞吐與實作簡
+易度。
+6.1.2Hadoop與  Spark的關鍵差異
+核心必考
+Hadoop  MapReduce每一階段的中間結果都要寫回磁碟（HDFS），而機器學習與圖演算法需要反覆
+掃描同一份資料，每次迭代都付出一次磁碟往返成本，因此極慢。
+Spark以記憶體中的分散式資料集進行運算，中間結果可保留在記憶體，迭代式任務可快上一至兩個
+數量級。
+元件             角色                          備註
+HDFS            分散式檔案系統，資料分塊並多         提供容錯與高吞吐循序讀取
+副本存放
+YARN           叢集資源排程                  分配容器與記憶體
+MapReduce       批次運算模型                  中間結果落磁碟
+Spark            記憶體運算引擎                可讀取  HDFS，取代  MapReduce作為
+運算層
+常見陷阱與錯誤觀念
+常見誤述：「Spark取代了  Hadoop」。正確理解是  Spark取代的是  MapReduce這個運算層，仍
+常搭配  HDFS或物件儲存作為儲存層、YARN或其他排程器作為資源層。
+6.1.3Spark的三個必考特性
+核心必考
+6.1.3.1一、惰性求值與  DAG
+filter、select、map、withColumn、join等轉換（Transformation）不會立即執行，只建立執行計畫（有
+向無環圖）；直到遇到行動（Action）才真正計算。
+此設計讓查詢優化器能重排、合併與下推運算——例如把filter推到讀取階段，直接少讀資料。
+6.1.3.2二、Transformation與  Action的分辨
+Transformation（不執行）                 Action（觸發執行）      易混淆者
+select、filter、where           count()                    df.count()是  Action，回傳整
+數
+withColumn、drop                collect()                  groupBy(...).count()      是
+Transformation，  回  傳
+DataFrame
+groupBy、agg、join              show()、take()            兩者名稱都有   count，作用完
+全不同
+orderBy、distinct               write、foreach             write本身即為  Action
+本章第一名考點
+df.count()→Action，立刻運算並回傳一個整數。
+df.groupBy("region").count()→Transformation，回傳一個新的  DataFrame，什麼都還沒算。
+這組對比在程式判讀題中出現頻率極高。
+6.1.3.3三、Shuffle與資料傾斜
+Shuffle指跨節點的資料重分配。觸發者包括groupBy、join、distinct、repartition、orderBy。它牽涉
+磁碟寫入與網路傳輸，是分散式作業中最昂貴的操作。
+資料傾斜（Data  Skew）指某一個  key的資料量遠大於其他，導致單一  task拖垮全局——其他  99個
+task都完成了，就等那一個。
+優化手段           作法                          適用
+減少  Shuffle         調整運算順序、先過濾再聚合    通用
+廣播  join           將小表複製到各節點，避免大表              大表  join小維度表
+重分配
+優化手段           作法                          適用
+加鹽（salting）      在傾斜  key後加隨機後綴分散，    單一  key極端集中
+聚合後再合併
+預先分桶           依  join  key事先分桶儲存        反覆以同一  key聯結
+6.1.4Kafka與事件串流
+核心必考
+Kafka是分散式事件串流平台，以主題（Topic）與分區（Partition）組織訊息，提供高吞吐、持久化
+與重放能力。
+在資料架構中的三個核心價值：
+1.解耦生產者（物聯網裝置、應用系統）與消費者（特徵計算、模型推論、資料湖寫入）——雙方不需
+彼此知道存在。
+2.緩衝——下游故障或流量尖峰時，訊息仍保留在  Kafka中不遺失。
+3.重放——新的消費者可從頭讀取歷史訊息，便於補算或新增下游應用。
+分區決定並行度與順序保證：Kafka只保證同一分區內的訊息順序，跨分區無全域順序。若某類事件
+必須依序處理（如同一帳戶的交易），應以該帳戶  ID作為分區鍵。
+6.1.5時間語意與視窗
+核心必考
+串流處理必須區分：
+• 事件時間（Event  Time）：事件實際發生的時間（裝置產生讀值的時刻）。
+• 處理時間（Processing  Time）：系統收到的時間。
+網路延遲與離線緩衝會使事件亂序到達。正確的統計必須依事件時間，並設定水位線（Watermark）
+容許一定程度的遲到資料——水位線越寬容，結果越正確但延遲越高。
+視窗型態         定義                          典型用途
+滾動視窗         固定長度、不重疊              每  5分鐘的交易總額
+滑動視窗         固定長度、重疊                每  1分鐘更新一次「過去  5分鐘」的移
+動平均
+會話視窗         依活動間隔切分，長度不固定    使用者一次瀏覽工作階段
+產業延伸（非官方核心考點）
+特定產品之組態參數（如分區數調校、消費者群組再平衡策略、串流引擎的檢查點設定、各家雲端
+託管服務比較）屬產業延伸。官方備註欄僅點名工具名稱與批次／串流概念，不需記憶產品參數。
+版本敏感
+6.2 程式判讀重點
+核心必考
+惰性求值：哪一行才真正運算
+1df2= df.filter(df.status=="OK")#Transformation：不執行
+2df3= df2.groupBy("region").count()#Transformation：不執行
+3df3.write.parquet("/out/result")#Action：此時才真正計算
+判讀重點：前兩行執行後不會有任何資料被讀取，即使df有一兆列也是瞬間完成。第三行觸發整條
+DAG，且groupBy會產生  Shuffle。
+count的兩種身分
+1n= df.count()#Action‑>int
+2g= df.groupBy("city").count()#Transformation‑>DataFrame
+3g.show()#Action‑>此時才運算
+collect的記憶體風險與正確除錯方式
+1rows= df.collect()#危險：把「全部」資料拉回 driver，大表直接記憶體溢出
+2df.show(20)#正確：只取前 20列
+3df.limit(100).toPandas()
+6.3 常見陷阱與錯誤觀念
+常見陷阱與錯誤觀念
+•  把groupBy(...).count()當成  Action。它回傳  DataFrame，是  Transformation。
+•  以為filter執行後資料就被過濾了。惰性求值下什麼都還沒發生。
+•  對大表呼叫collect()。driver記憶體溢出的頭號原因。
+•  說「Spark取代  Hadoop」。取代的是  MapReduce運算層。
+•  忽略  Shuffle成本。在join前先過濾與投影，可大幅減少搬移的資料量。
+•  以處理時間做視窗統計。事件亂序時結果會錯，且無法重現。
+•  以為  Kafka保證全域順序。只保證同一分區內有序。
+•  把資料傾斜當成叢集資源不足。加機器無效，須從  key分布著手。
+6.6章末複習
+6.6.1一頁重點
+主題                必記結論
+批次  vs串流         有界／無界；分鐘小時級／毫秒秒級
+Hadoop  vs  Spark                     MapReduce中間結果落磁碟；Spark記憶體運算；Spark取代的是運
+算層
+惰性求值                                              Transformation只建  DAG，Action才運算
+最高頻考點           df.count()是  Action；groupBy(...).count()是  Transformation
+Shuffle                groupBy／ join／ distinct／ repartition／ orderBy觸發
+資料傾斜            單一  key過大拖垮單一  task；加機器無效，須加鹽或廣播  join
+iPAS  AI應用規劃師（中級）考綱教科書                                            數據處理技術與工具
+主題                必記結論
+collect               拉回全部資料至  driver，大表必爆；改用show／ take／ limit
+Kafka               解耦、緩衝、重放；僅保證分區內順序
+時間語意            依事件時間分窗＋水位線；滾動／滑動／會話三種視窗
+6.6.2必背名詞
+HDFS、MapReduce、YARN、惰性求值（Lazy  Evaluation）、DAG、Transformation、Action、Shuffle、
+資料傾斜（Data  Skew）、加鹽（Salting）、廣播  join、Topic、Partition、事件時間、處理時間、水位線
+（Watermark）、滾動／滑動／會話視窗。
+6.6.3五分鐘快速複習
+1.列出五個  Action與五個  Transformation，並說出  count的兩種身分。
+2.說出哪些操作會觸發  Shuffle。
+3.說出資料傾斜為何加機器無效，以及正確的三種處置。
+4.說出  Kafka的順序保證範圍。
+5.說出事件時間與處理時間的差異，以及水位線的作用。
+6.6.4跨章連結
+Chapter5：儲存格式與欄式優化；Chapter         7：大規模轉換與縮放；Chapter        10：分散式訓練；第  I冊
+L21302：串流推論與訓練服務偏斜。

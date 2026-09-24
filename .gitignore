@@ -1,0 +1,4 @@
+# 編譯產物
+build/
+__pycache__/
+*.pyc
