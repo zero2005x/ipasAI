@@ -1,7 +1,6 @@
 # iPAS AI 應用規劃師（中級）考綱教科書
 
 ![iPAS AI 應用規劃師中級考綱教科書](docs/banner.png)
-<!-- TODO: 建議橫幅尺寸為 1280x320 PNG，包含專案名稱、「中級」標籤與三冊教科書封面圖示 -->
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/Content-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -31,17 +30,9 @@
 
 ## 專案截圖
 
-<!-- TODO: 請於 docs/screenshots/ 目錄補上實際畫面截圖後取消以下註解或替換佔位圖片 -->
-
 | 教材章節內頁排版 | 題目卡片與答案防透設計 | 自動化 PDF 編譯管線 |
 |:---:|:---:|:---:|
-| ![教材內頁範例](docs/screenshots/sample-page.png)<br>*(課本風排版、考點卡、彩色呼告框)* | ![題目卡片範例](docs/screenshots/sample-quiz.png)<br>*(懸掛縮排題目卡、解析移至章末)* | ![編譯工具範例](docs/screenshots/sample-build.png)<br>*(Chrome Headless 向量轉譯)* |
-
-<!-- TODO: 截圖檔案清單：
-- docs/screenshots/sample-page.png (教材內頁)
-- docs/screenshots/sample-quiz.png (題目卡片)
-- docs/screenshots/sample-build.png (PDF 編譯工具運行畫面)
--->
+| ![教材內頁範例](docs/screenshots/sample-page.png)<br>*(課本風排版、考點卡、彩色呼告框)* | ![題目卡片範例](docs/screenshots/sample-quiz.png)<br>*(懸掛縮排題目卡、解析移至章末)* | ![編譯工具範例](docs/screenshots/sample-build.png)<br>*(實際 PDF 編譯日誌)* |
 
 ---
 

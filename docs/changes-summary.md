@@ -28,16 +28,16 @@
 
 ## 2. 待補項目清單 (TODO Checklist)
 
-為使專案視覺效果達到最佳狀態，後續建議依序補齊以下資產檔案：
+視覺資產已補齊，交付項目如下：
 
-- [ ] **橫幅圖檔**：`docs/banner.png`
+- [x] **橫幅圖檔**：`docs/banner.png`
   - 建議尺寸：`1280 x 320 px` PNG 格式。
   - 設計元素：包含「iPAS AI 應用規劃師」、「中級考綱教科書」、「經濟部 115.06 版」及三冊立體封面示意圖。
-- [ ] **截圖一（教材內頁）**：`docs/screenshots/sample-page.png`
+- [x] **截圖一（教材內頁）**：`docs/screenshots/sample-page.png`
   - 建議內容：展示課本風排版、考點卡、彩色語意提示框（觀念/實務/注意）與雙欄表格。
-- [ ] **截圖二（題目卡片）**：`docs/screenshots/sample-quiz.png`
+- [x] **截圖二（題目卡片）**：`docs/screenshots/sample-quiz.png`
   - 建議內容：展示懸掛縮排題幹、(A)至(D)選項，以及章末解答解析徽章（答案防透設計）。
-- [ ] **截圖三（編譯工具）**：`docs/screenshots/sample-build.png`
+- [x] **截圖三（編譯工具）**：`docs/screenshots/sample-build.png`
   - 建議內容：終端機執行 `python tools/build_pdf.py` 之編譯日誌畫面或渲染預覽圖。
 - [ ] **線上閱讀部署**（選用）：若未來建立 GitHub Pages 或靜態閱讀網站，可將網址補入「線上閱讀與 PDF 下載」段落。
 
