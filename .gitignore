@@ -2,3 +2,14 @@
 build/
 __pycache__/
 *.pyc
+
+# 暫存與審閱截圖
+tmp/
+
+# 本地非公開素材與官方原卷（杜絕著作權爭議）
+尚未整理/
+
+# 執行測試產生的暫存資料
+anonymized.csv
+.DS_Store
+Thumbs.db

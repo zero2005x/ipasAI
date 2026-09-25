@@ -1,0 +1,50 @@
+# 授權條款 (License)
+
+本專案採用雙重授權模式：
+
+## 1. 教科書內容與題庫 (Textbook Content & Question Bank)
+本專案之教科書內容、自編模擬題、解析、架構地圖與文檔（包含 `book/`、`shared/`、`audit/`、`prompts/` 目錄下之所有 Markdown 文件），採用 **創用 CC 姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0) 授權條款**。
+
+您可以自由地：
+- **分享** — 在任何媒介以任何形式複製、散布本素材
+- **修改** — 重新混和、轉換本素材，並依本素材建立新素材
+
+惟需遵照下列條件：
+- **姓名標示 (Attribution)** — 您必須給予適當的表彰，提供指向本授權條款的連結，並說明是否進行了變更。
+- **非商業性 (NonCommercial)** — 您不得將本素材用於商業目的。
+- **相同方式分享 (ShareAlike)** — 若您重新混和、轉換本素材，或依本素材建立新素材，您必須依本素材相同的授權條款來散布您的貢獻物。
+
+詳細授權條款請見：https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant
+
+---
+
+## 2. 工具與軟體原始碼 (Tools & Scripts)
+本專案包含之編譯管線、排版處理程式與自動化檢查腳本（包含 `tools/` 目錄下之 Python 腳本），採用 **MIT 授權條款 (MIT License)**。
+
+MIT License
+
+Copyright (c) 2026 iPAS AI Application Planner Textbook Project Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## 3. 免責與著作權聲明 (Disclaimer)
+- 本專案係由社群與備考者共同編寫之開源自學教材，**非經濟部產業人才能力鑑定（iPAS）官方出版品**。
+- 教科書中引用之歷屆試題資訊僅作為學習索引與對位之合理使用，官方考卷著作權歸原主辦單位所有。
