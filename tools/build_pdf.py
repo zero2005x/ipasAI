@@ -2,19 +2,17 @@
 """Compile a volume's v0.3 Markdown into an HTML intermediate, then a PDF.
 
     python3 tools/build_pdf.py L21            # -> build/L21/L21_v0.3.pdf
+    python3 tools/build_pdf.py L21 --draft  # -> clearly labelled review PDF
     python3 tools/build_pdf.py L21 --html-only
 
-Pipeline: book/<VOL>/v0.3/*.md  ->  HTML (+ CSS)  ->  WeasyPrint  ->  PDF
+Pipeline: book/<VOL>/v0.3/*.md -> HTML (+ CSS) -> WeasyPrint/Chrome -> PDF
 
-Why not pandoc/LaTeX: pandoc is not installed in this environment, and the only
-CJK font available is Droid Sans Fallback. WeasyPrint + that font produces a
-correctly shaped zh-TW PDF today.  The HTML/CSS is deliberately print-oriented
-(A4, running heads, page numbers) so the same CSS can later be reused if the
-project moves to a LaTeX toolchain.
+The HTML/CSS is print-oriented (A4, page numbers). WeasyPrint is preferred
+when present; Chrome or Edge headless is used on Windows without WeasyPrint.
 
-Two gates run before PDF generation:
-  1. shared-content consistency (the three volumes must agree on shared blocks)
-  2. tools/check_book.py --strict   (P0 failures block the compile)
+The check_book gate blocks ordinary output when unresolved errors remain.
+--draft writes separate, visibly labelled review files while preserving that
+release gate.
 """
 from __future__ import annotations
 
@@ -27,6 +25,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from book_files import read_expanded, render_stats, volume_files  # noqa: E402
 
 # 字型堆疊：Noto CJK TC 優先，其次回退到系統既有字型。
 # 注意：不使用 "sans-serif"／"serif" 泛稱作為第一順位——fontconfig 在只有
@@ -124,6 +124,9 @@ def tidy_math(t: str) -> str:
     """Trim redundant spaces inside parentheses that hold a formula."""
     def fix(m: re.Match) -> str:
         inner = m.group(1)
+        # Markdown link destinations are parenthesized too, but are not formulas.
+        if (m.start() > 0 and t[m.start() - 1] == "]") or inner.startswith(("http://", "https://")):
+            return m.group(0)
         # 只有當括號內幾乎沒有中文字時才視為數學式
         cjk = len(re.findall(f"[{_CJK}]", inner))
         if cjk > 1:
@@ -156,7 +159,7 @@ def md_to_html(md: str) -> str:
     """Minimal, dependency-free Markdown subset -> HTML.
 
     Handles: ATX headings, tables (GFM), fenced code, blockquotes, lists,
-    bold/italic/code spans. Deliberately small and predictable: the book uses a
+    bold/italic/code spans and HTTPS links. Deliberately small and predictable: the book uses a
     narrow subset, and a full parser would fight the PDF-extracted layout.
     """
     out: list[str] = []
@@ -190,6 +193,14 @@ def md_to_html(md: str) -> str:
             return f"\x00{len(spans) - 1}\x00"
 
         t = re.sub(r"`([^`]+)`", stash, t)
+        # Render source citations as links rather than printing raw Markdown URLs.
+        # Only http(s) targets are accepted; escape the attribute after undoing the
+        # initial text escaping so query strings are not double-escaped.
+        t = re.sub(
+            r"\[([^\]]+)\]\((https?://[^\s)]+)\)",
+            lambda m: f'<a href="{html.escape(html.unescape(m.group(2)), quote=True)}">{m.group(1)}</a>',
+            t,
+        )
         t = re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", t)
         t = re.sub(r"(?<!\*)\*([^*]+)\*(?!\*)", r"<em>\1</em>", t)
         t = re.sub(r"\x00(\d+)\x00",
@@ -218,6 +229,11 @@ def md_to_html(md: str) -> str:
 
         if not stripped:
             close_table(); close_ul()
+            i += 1
+            continue
+        if stripped == "<!-- pagebreak -->":
+            close_table(); close_ul()
+            out.append('<div class="pagebreak"></div>')
             i += 1
             continue
         if stripped.startswith("<!--"):
@@ -278,25 +294,22 @@ def collect(vol: str) -> list[Path]:
     d = ROOT / "book" / vol / "v0.3"
     if not d.exists():
         raise SystemExit(f"missing {d}; run tools/make_v03.py {vol} first")
-    front = sorted((d / "front").glob("*.md")) if (d / "front").exists() else []
-    chaps = sorted(p for p in d.glob("ch*.md"))
-    apx = sorted(p for p in d.glob("apx*.md"))
-    return list(front) + chaps + apx
+    return volume_files(vol)
 
 
-def build_html(vol: str, stats: dict, files: list[Path]) -> str:
+def build_html(vol: str, stats: dict, files: list[Path], draft: bool = False) -> str:
     body = []
     for f in files:
-        title = f.stem
         body.append(f'<div class="chapter">')
-        body.append(md_to_html(f.read_text(encoding="utf-8")))
+        body.append(md_to_html(render_stats(read_expanded(f), stats)))
         body.append("</div>")
+    roman = {"L21": "I", "L22": "II", "L23": "III"}[vol]
     cover = f"""
 <div class="cover">
-  <h1>iPAS AI應用規劃師（中級）考綱教科書　第 {vol} 冊</h1>
-  <div class="sub">v0.3（草稿）</div>
+  <h1>iPAS AI應用規劃師（中級）考綱教科書　第 {roman} 冊（{vol}）</h1>
+  <div class="sub">v0.3 校訂稿{'' if not draft else '｜尚有待補內容，請見附錄 B'}</div>
   <div class="meta">
-    資料截止日：中華民國 115 年 10 月 1 日<br/>
+    基準查核日：中華民國 115 年 9 月 24 日；續校訂日：115 年 9 月 25 日<br/>
     對應考綱：經濟部 iPAS《評鑑內容範圍參考》115.06 版<br/>
     模擬題 {stats.get('sim_total', '?')} 題　章節 {stats.get('chapters', '?')} 章
   </div>
@@ -317,38 +330,53 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("volume")
     ap.add_argument("--html-only", action="store_true")
-    ap.add_argument("--skip-gate", action="store_true", help="do not run check_book gate")
+    ap.add_argument("--draft", action="store_true", help="build an explicitly labelled draft while the release gate has findings")
     args = ap.parse_args()
     vol = args.volume
 
-    if not args.skip_gate:
-        r = subprocess.run([sys.executable, str(ROOT / "tools" / "check_book.py"), vol],
-                           capture_output=True, text=True, cwd=ROOT)
-        if r.returncode != 0:
-            print("編譯關卡未通過：check_book.py 回報 P0 失敗。")
-            print(r.stdout[-2500:])
-            print("（規格：公告試題索引任一列空白就不能編譯。要用 --skip-gate 產生草稿。）")
+    r = subprocess.run([sys.executable, str(ROOT / "tools" / "check_book.py"), vol],
+                       capture_output=True, text=True, encoding="utf-8", cwd=ROOT)
+    if r.returncode != 0:
+        print("編譯關卡未通過：check_book.py 發現未完成項目。")
+        print(r.stdout[-2500:])
+        if not args.draft:
+            return 1
+        print("以明確標示的校訂稿模式產生檢閱版。")
 
-    stats = json.loads((ROOT / "book" / vol / "stats.json").read_text(encoding="utf-8"))
+    from recount_stats import recount  # numbers are always recomputed from the sources (spec §7)
+    stats = recount(vol)
     files = collect(vol)
-    doc = build_html(vol, stats, files)
+    doc = build_html(vol, stats, files, draft=args.draft)
 
     outdir = ROOT / "build" / vol
     outdir.mkdir(parents=True, exist_ok=True)
-    html_path = outdir / f"{vol}_v0.3.html"
+    stem = f"{vol}_v0.3_校訂稿" if args.draft else f"{vol}_v0.3"
+    html_path = outdir / f"{stem}.html"
     html_path.write_text(doc, encoding="utf-8")
     print(f"HTML → {html_path} ({len(doc):,} chars, {len(files)} source files)")
 
     if args.html_only:
         return 0
 
-    pdf_path = outdir / f"{vol}_v0.3.pdf"
+    pdf_path = outdir / f"{stem}.pdf"
     try:
         from weasyprint import HTML
     except ImportError:
-        print("weasyprint 未安裝，僅產出 HTML。")
-        return 0
-    HTML(string=doc, base_url=str(outdir)).write_pdf(str(pdf_path))
+        chrome = Path(r"C:\Program Files\Google\Chrome\Application\chrome.exe")
+        if not chrome.exists():
+            chrome = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
+        if not chrome.exists():
+            print("無可用的 PDF 引擎；HTML 已產生，PDF 未完成。")
+            return 1
+        cmd = [str(chrome), "--headless", "--disable-gpu", "--no-sandbox",
+               "--no-pdf-header-footer", f"--print-to-pdf={pdf_path}", html_path.as_uri()]
+        completed = subprocess.run(cmd, capture_output=True, text=True,
+                                   encoding="utf-8", errors="replace", timeout=180)
+        if completed.returncode != 0 or not pdf_path.exists():
+            print(completed.stderr[-2000:])
+            return 1
+    else:
+        HTML(string=doc, base_url=str(outdir)).write_pdf(str(pdf_path))
     size = pdf_path.stat().st_size
     print(f"PDF  → {pdf_path} ({size:,} bytes)")
     return 0
