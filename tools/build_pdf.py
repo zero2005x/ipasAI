@@ -59,9 +59,10 @@ h1, h2, h3, h4, h5, h6 { font-family: %(head)s; line-height: 1.4;
                           text-align: left; }
 h1 { string-set: book-title content(); font-size: 20pt; margin: 0 0 4mm 0; }
 h2 { font-size: 16pt; border-bottom: 1.5pt solid #222; padding-bottom: 1.5mm;
-     margin: 8mm 0 4mm 0; page-break-before: always; break-before: page;
-     page-break-after: avoid; break-after: avoid; }
-h2:first-of-type { page-break-before: avoid; break-before: avoid; }
+     margin: 0 0 4mm 0; page-break-after: avoid; break-after: avoid; }
+/* 每個來源檔（前頁各篇、各章、附錄）從新頁開始；之前寫在 h2:first-of-type 上的
+   break-before: avoid 因每章各有一個 .chapter 容器而命中每一章，導致各章接續排版 */
+.chapter { page-break-before: always; break-before: page; }
 h3 { font-size: 13pt; margin: 6mm 0 2.5mm 0; page-break-after: avoid;
      break-after: avoid; }
 h4 { font-size: 11.5pt; margin: 5mm 0 2mm 0; color: #222;
@@ -104,6 +105,9 @@ blockquote { margin: 3mm 0; padding: 2mm 3mm; background: #f7f7f7;
        display: inline-block; margin: 0 0 1.5mm 0; }
 
 .pagebreak { page-break-after: always; break-after: page; }
+/* 標題＋分層標籤＋第一段內容不分頁（Chrome 只可靠地支援 break-inside） */
+.keep { page-break-inside: avoid; break-inside: avoid; }
+ul.cont { margin-top: -1.2mm; }
 .cover { text-align: center; margin-top: 60mm; }
 .cover h1 { font-size: 17pt; text-align: center; line-height: 1.6; }
 .cover .sub { font-size: 13pt; color: #444; margin-top: 6mm; }
@@ -285,7 +289,60 @@ def md_to_html(md: str) -> str:
     close_table(); close_ul()
     if in_code:
         out.append("</pre>")
-    return "\n".join(out)
+    return "\n".join(keep_with_next(out))
+
+
+_TIER_P = re.compile(r"^<p>(核心必考|官方補充|產業延伸|版本敏感)</p>$")
+_SIM_META = re.compile(r"^<p>模擬題 SIM-")
+_KEEP_MAX_LINES = 14   # 超過此長度的表格或清單只把開頭綁在一起，避免整段被推到下一頁留下大片空白
+
+
+def _block_end(out: list[str], k: int) -> int:
+    """Index just past the block (p / ul / table / pre / blockquote) that starts at out[k]."""
+    first = out[k]
+    for opener, closer in (("<ul>", "</ul>"), ("<table>", "</tbody></table>"), ("<pre>", "</pre>")):
+        if first.startswith(opener):
+            j = k
+            while j < len(out) and not out[j].endswith(closer) and out[j] != closer:
+                j += 1
+            return j + 1
+    return k + 1
+
+
+def keep_with_next(out: list[str]) -> list[str]:
+    """Wrap each h3–h5 heading with its tier/meta line and first content block in a no-break box.
+
+    Chrome's print engine ignores ``break-after: avoid`` on headings, so a heading could end a page
+    alone. ``break-inside: avoid`` on a wrapper is honoured by both Chrome and WeasyPrint.
+    """
+    res: list[str] = []
+    k = 0
+    while k < len(out):
+        line = out[k]
+        if not re.match(r"^<h[345]>", line):
+            res.append(line); k += 1; continue
+        group = [line]
+        k += 1
+        while k < len(out) and (_TIER_P.match(out[k]) or _SIM_META.match(out[k])
+                                or re.match(r"^<h[345]>", out[k])):   # 連續標題一起綁到第一段內容
+            group.append(out[k]); k += 1
+        if k < len(out) and not re.match(r"^<h[1-6]>|^<div", out[k]):
+            end = _block_end(out, k)
+            block = out[k:end]
+            if len(block) > _KEEP_MAX_LINES and block[0] == "<ul>":
+                group += ["<ul>", block[1], "</ul>"]
+                rest = ['<ul class="cont">'] + block[2:]
+            else:                      # 表格與程式碼本身已禁止內部分頁，與標題綁在一起行為相同
+                group += block
+                rest = []
+            k = end
+            res.append('<div class="keep">')
+            res += group
+            res.append("</div>")
+            res += rest
+            continue
+        res.append('<div class="keep">'); res += group; res.append("</div>")
+    return res
 
 
 # ------------------------------------------------------------------ assembly

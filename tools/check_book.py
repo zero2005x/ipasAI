@@ -404,6 +404,31 @@ def check_known_pdf_corruption(text: str) -> list[dict]:
 # ------------------------------------------------------------------ reporting
 
 SEV_ORDER = {"error": 0, "warn": 1, "info": 2}
+ALLOWLIST = ROOT / "audit" / "strict_allowlist.tsv"
+
+
+def apply_allowlist(findings: list[dict], vol: str) -> None:
+    """Mark reviewed warnings (audit/strict_allowlist.tsv) so --strict ignores them.
+
+    Columns: volume(L21/L22/L23/*)  check  found(*=any)  context_regex  reason
+    Matching uses the finding's context, not line numbers, so entries survive edits.
+    """
+    if not ALLOWLIST.exists():
+        return
+    rules = []
+    for ln in ALLOWLIST.read_text(encoding="utf-8").splitlines():
+        if not ln.strip() or ln.startswith("#") or ln.startswith("volume\t"):
+            continue
+        v, chk, found, ctx, reason = (ln.split("\t") + [""] * 5)[:5]
+        rules.append((v, chk, found, re.compile(ctx), reason))
+    for f in findings:
+        if f["severity"] != "warn":
+            continue
+        for v, chk, found, ctx, reason in rules:
+            if v in ("*", vol) and chk == f["check"] and found in ("*", f["found"]) \
+                    and ctx.search(f.get("context") or ""):
+                f["allowed"] = reason
+                break
 
 
 def report(findings: list[dict], vol: str, source: str = "v03") -> int:
@@ -423,6 +448,8 @@ def report(findings: list[dict], vol: str, source: str = "v03") -> int:
         print(f"\n[{check}] error={errs} warn={warns} info={infos}")
         for i in items[:12]:
             tag = {"error": "✗", "warn": "!", "info": "·"}[i["severity"]]
+            if i.get("allowed"):
+                tag = "✓"
             loc = f"p{i['volume_page']}/L{i['line']}"
             extra = f" → {i['should_be']}" if i["should_be"] else ""
             print(f"  {tag} {loc:<14} {i['found'][:46]:<48}{extra}")
@@ -430,7 +457,9 @@ def report(findings: list[dict], vol: str, source: str = "v03") -> int:
                 print(f"      ctx: {i['context'][:100]}")
         if len(items) > 12:
             print(f"  … 其餘 {len(items) - 12} 筆")
-    print(f"\n合計 error={counts.get('error', 0)} warn={counts.get('warn', 0)} info={counts.get('info', 0)}")
+    allowed = sum(1 for f in findings if f.get("allowed"))
+    print(f"\n合計 error={counts.get('error', 0)} warn={counts.get('warn', 0)} info={counts.get('info', 0)}"
+          f"（warn 中已審保留 {allowed}，未審 {counts.get('warn', 0) - allowed}；清單 audit/strict_allowlist.tsv）")
     return counts.get("error", 0)
 
 
@@ -454,12 +483,13 @@ def main() -> int:
     findings += check_source_pages(text)
     findings += check_known_pdf_corruption(text)
 
+    apply_allowlist(findings, args.volume)
     n_err = report(findings, args.volume, args.source)
     if args.json:
         Path(args.json).write_text(json.dumps(findings, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"findings → {args.json}")
     if args.strict:
-        return 1 if (n_err or any(f["severity"] == "warn" for f in findings)) else 0
+        return 1 if (n_err or any(f["severity"] == "warn" and not f.get("allowed") for f in findings)) else 0
     return 1 if n_err else 0
 
 

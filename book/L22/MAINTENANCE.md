@@ -17,3 +17,11 @@
 ## 公告試題索引的原始對位備註（讀者版已移除）
 
 - ch04 115-1 Q39：信心 medium；次 代 碼L22203； 須對照原卷圖表
+
+## 共用內容的維護位置（115.09.25）
+
+- `shared/book/front/`：我國_AI法制時間軸、考試規則速覽、授證路線導航（三冊共用，只改這一份）。
+- `shared/book/apxA.md`：附錄 A（三冊共用）。
+- `shared/book/modules/`：機率分佈基礎、隱私強化技術、資訊安全基礎，由各章 `<!-- include: ... -->` 引入；各章保留自己的節號、分層標籤與「對應題號」。
+- `tools/make_front_matter.py`、`tools/make_v03.py` 是 v0.2→v0.3 的一次性產生器，會寫回各冊 `front/`；再執行會重新產生各冊複本，覆蓋共用檔的效果，**勿再執行**。
+- 排版驗收：`python tools/scan_page_tails.py build/<VOL>/<VOL>_v0.3_校訂稿.pdf`，找出頁尾孤立標題；目前三冊皆為 0。
