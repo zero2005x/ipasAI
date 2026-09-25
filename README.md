@@ -15,9 +15,9 @@
 
 | 冊別 | 考科代碼 | 對應路線／專業科目 | 頁數 | PDF 下載 (Release) |
 |:---:|:---:|:---|:---:|:---:|
-| **第 I 冊** | **L21** | 人工智慧技術應用與規劃（共通必考科目） | 167 頁 | [📥 下載第 I 冊 PDF](https://github.com/zero2005x/ipas/releases/latest/download/iPAS_AI%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%8B_%E4%B8%AD%E7%B4%9A%E6%95%99%E7%A7%91%E6%9B%B8_%E7%AC%ACI%E5%86%8A_L21_v0.3.pdf) |
-| **第 II 冊** | **L22** | 巨量資料分析與處理（數據分析專業路線） | 193 頁 | [📥 下載第 II 冊 PDF](https://github.com/zero2005x/ipas/releases/latest/download/iPAS_AI%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%8B_%E4%B8%AD%E7%B4%9A%E6%95%99%E7%A7%91%E6%9B%B8_%E7%AC%ACII%E5%86%8A_L22_v0.3.pdf) |
-| **第 III 冊** | **L23** | 深度學習與演算法實務（機器學習專業路線） | 180 頁 | [📥 下載第 III 冊 PDF](https://github.com/zero2005x/ipas/releases/latest/download/iPAS_AI%E6%87%89%E7%94%A8%E8%A6%8F%E5%8A%83%E5%B8%8B_%E4%B8%AD%E7%B4%9A%E6%95%99%E7%A7%91%E6%9B%B8_%E7%AC%ACIII%E5%86%8A_L23_v0.3.pdf) |
+| **第 I 冊** | **L21** | 人工智慧技術應用與規劃（共通必考科目） | 167 頁 | [📥 下載第 I 冊 PDF](https://github.com/zero2005x/ipas/releases/download/v0.3.0/iPAS_AI_Level2_Book1_L21_Architecture_v0.3.pdf) |
+| **第 II 冊** | **L22** | 巨量資料分析與處理（數據分析專業路線） | 193 頁 | [📥 下載第 II 冊 PDF](https://github.com/zero2005x/ipas/releases/download/v0.3.0/iPAS_AI_Level2_Book2_L22_BigData_v0.3.pdf) |
+| **第 III 冊** | **L23** | 深度學習與演算法實務（機器學習專業路線） | 180 頁 | [📥 下載第 III 冊 PDF](https://github.com/zero2005x/ipas/releases/download/v0.3.0/iPAS_AI_Level2_Book3_L23_EdgeAI_v0.3.pdf) |
 
 > 💡 **提示**：若欲檢視原始 Markdown 書稿，可直接瀏覽本倉庫 `book/` 與 `shared/` 目錄。
 
